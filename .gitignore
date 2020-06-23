@@ -1,3 +1,11 @@
+# Deployment directories
+node_modules
+dist
+.idea
+package-lock.json
+
+# Optional npm cache directory
+.npm
 
 # Created by https://www.toptal.com/developers/gitignore/api/macos,jetbrains
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,jetbrains
