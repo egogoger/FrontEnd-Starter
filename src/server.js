@@ -18,7 +18,7 @@ http.createServer(function(req, res) {
             break;
         case '/style.css.map':
             path = 'dist/style.css.map';
-            type = 'application/javascript';
+            type = 'text/css';
             break;
         default:
             path = 'dist/index.html';

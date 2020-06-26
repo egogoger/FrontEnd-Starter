@@ -1,0 +1,21 @@
+.navigator {
+  display: flex;
+
+  &__link {
+    color: blue;
+    text-decoration: underline;
+    font-size: 10px;
+
+    &:hover {
+      color: blueviolet;
+    }
+
+    &:visited {
+      color: blueviolet;
+    }
+
+    &:active {
+      color: darkred;
+    }
+  }
+}
