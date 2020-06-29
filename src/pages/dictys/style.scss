@@ -6,4 +6,17 @@
   align-items: center;
   justify-content: center;
   padding-top: 50px;
+
+  &_app {
+    color: white;
+    text-decoration: underline;
+
+    &:hover {
+      color: deeppink;
+    }
+
+    &:active {
+      color: deeppink;
+    }
+  }
 }

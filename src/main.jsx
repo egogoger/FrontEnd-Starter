@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import HomePage from './pages/home/home';
-import DictysPage from './pages/dictys/dictys';
+import DictysPage from './pages/dictys/logic';
 import AboutPage from './pages/about/about';
 
 render(
