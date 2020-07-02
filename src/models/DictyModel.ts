@@ -1,10 +1,10 @@
-import {Dicty, Word} from "../utils/interfaces";
-import {Const} from "../utils/constants";
+import {Dicty, Word} from "Interfaces";
+import {Const} from "Constants";
 
 let dictysModelSymbol = Symbol('Model for dictys');
 let dictysModelEnforcer = Symbol('The only object that can create DictysModel');
 
-class DictysModel {
+class DictyModel {
     private dictys: Map<string, Dicty>;
 
     constructor(enforcer) {
@@ -20,9 +20,9 @@ class DictysModel {
         }
     }
 
-    static get instance(): DictysModel {
+    static get instance(): DictyModel {
         if (!this[dictysModelSymbol])
-            this[dictysModelSymbol] = new DictysModel(dictysModelEnforcer);
+            this[dictysModelSymbol] = new DictyModel(dictysModelEnforcer);
         return this[dictysModelSymbol];
     }
 
@@ -83,4 +83,4 @@ class DictysModel {
     }
 }
 
-export default DictysModel;
+export default DictyModel;

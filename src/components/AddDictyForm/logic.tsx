@@ -2,10 +2,10 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import './style.scss';
 
-import {Dicty} from "../../utils/interfaces";
-import DictysModel from "../../models/dictys-model";
-import AddDictyFormRender from "./Render";
-import {addDicty} from "../../store/actions/Dicty";
+import {Dicty} from "Interfaces";
+import DictyModel from "Models/DictyModel";
+import AddDictyFormRender from "./render";
+import {addDicty} from "Actions/Dicty";
 
 interface IProps {
     addDicty: Function,
@@ -18,7 +18,7 @@ interface IState {
     category: string,
 }
 
-class AddDictyInput extends React.Component<IProps, IState> {
+class AddDictyForm extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
         this.state = {
@@ -43,6 +43,9 @@ class AddDictyInput extends React.Component<IProps, IState> {
     }
 
     private handleSubmit() {
+        if (this.state.title.length === 0 || this.state.language.length === 0) {
+            return;
+        }
         let dicty: Dicty = {
             lang: this.state.language,
             title: this.state.title,
@@ -50,7 +53,7 @@ class AddDictyInput extends React.Component<IProps, IState> {
             words: []
         };
         this.props.addDicty(dicty);
-        DictysModel.instance.createDicty(dicty);
+        DictyModel.instance.createDicty(dicty);
         this.setState({
             adding: false,
             language: '',
@@ -79,4 +82,4 @@ class AddDictyInput extends React.Component<IProps, IState> {
     }
 }
 
-export default connect(null, { addDicty })(AddDictyInput);
+export default connect(null, { addDicty })(AddDictyForm);

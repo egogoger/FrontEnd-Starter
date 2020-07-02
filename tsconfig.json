@@ -5,7 +5,18 @@
     "noImplicitAny": false,
     "module": "commonjs",
     "target": "es6",
-    "jsx": "react"
+    "jsx": "react",
+
+    "baseUrl": ".",
+    "paths": {
+      "Components/*": ["src/components/*"],
+      "Pages/*": ["src/pages/*"],
+      "Models/*": ["src/models/*"],
+      "Actions/*": ["src/store/actions/*"],
+      "Reducers/*": ["src/store/reducers/*"],
+      "Constants": ["src/utils/constants.ts"],
+      "Interfaces": ["src/utils/interfaces.ts"]
+    }
   },
   "include": [
     "src/**/*",

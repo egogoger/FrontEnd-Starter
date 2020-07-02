@@ -4,10 +4,10 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 
-import HomePage from './pages/home/home';
-import DictysPage from './pages/dictys/Render';
-import AboutPage from './pages/about/about';
-import reducer from "./store/reducers/MainReducer";
+import HomePage from 'Pages/Home/render';
+import DictysPage from 'Pages/Dictys/render';
+import AboutPage from 'Pages/About/render';
+import reducer from "Reducers/MainReducer";
 
 const store = createStore(
     reducer,

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import DictyTableItem from "../DictyTableItem/Render";
-import {Dicty} from "../../utils/interfaces";
+import DictyTableItem from "../DictyTableItem/render";
+import {Dicty} from "Interfaces";
 
 interface IProps {
     loading: boolean,

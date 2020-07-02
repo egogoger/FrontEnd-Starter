@@ -1,6 +1,6 @@
-import {ADD_DICTY, LOAD_DICTYS} from "../actions/ActionTypes";
-import { Dicty } from "../../utils/interfaces";
-import { IDictyAction } from "../actions/Dicty";
+import {ADD_DICTY, LOAD_DICTYS} from "Actions/ActionTypes";
+import { Dicty } from "Interfaces";
+import { IDictyAction } from "Actions/Dicty";
 
 const initialState: Dicty[] = [];
 

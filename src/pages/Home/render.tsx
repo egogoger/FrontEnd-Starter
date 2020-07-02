@@ -1,7 +1,7 @@
 import * as React from 'react';
-import './home.scss';
+import './style.scss';
 
-import Navigator from '../../components/Navigator/Render';
+import Navigator from 'Components/Navigator/render';
 
 function HomePage() {
     return (

@@ -1,5 +1,5 @@
 import * as types from './ActionTypes';
-import { Dicty } from "../../utils/interfaces";
+import { Dicty } from "Interfaces";
 
 export interface IDictyAction {
     type: string,

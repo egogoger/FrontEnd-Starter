@@ -2,10 +2,10 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import './style.scss';
 
-import {Dicty} from "../../utils/interfaces";
-import DictyTableRender from "./Render";
-import { loadDictys } from "../../store/actions/Dicty";
-import DictysModel from "../../models/dictys-model";
+import {Dicty} from "Interfaces";
+import DictyTableRender from "./render";
+import { loadDictys } from "Actions/Dicty";
+import DictyModel from "Models/DictyModel";
 
 interface IProps {
     dictys?: Dicty[],
@@ -21,7 +21,7 @@ class DictyTable extends React.Component<IProps, IState> {
         this.state = {
             loading: true,
         };
-        props.loadDictys(DictysModel.instance.getDictys());
+        props.loadDictys(DictyModel.instance.getDictys());
 
         this.getDictys = this.getDictys.bind(this);
         setTimeout(() => this.getDictys(), 2000);

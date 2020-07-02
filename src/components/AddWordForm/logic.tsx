@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './style.scss';
+
 import AddWordFormRender from "./render";
-import DictysModel from "../../models/dictys-model";
 
 interface IProps {}
 interface IState {

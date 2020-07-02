@@ -13,7 +13,16 @@ module.exports = {
     devtool: "source-map",
 
     resolve: {
-        extensions: [".ts", ".tsx", ".js", ".jsx"]
+        extensions: [".ts", ".tsx", ".js", ".jsx"],
+        alias: {
+            Components: path.resolve(__dirname, 'src/components/'),
+            Pages: path.resolve(__dirname, 'src/pages/'),
+            Models: path.resolve(__dirname, 'src/models/'),
+            Actions: path.resolve(__dirname, 'src/store/actions/'),
+            Reducers: path.resolve(__dirname, 'src/store/reducers/'),
+            Constants$: path.resolve(__dirname, 'src/utils/constants.ts'),
+            Interfaces$: path.resolve(__dirname, 'src/utils/interfaces.ts')
+        }
     },
 
     module: {
