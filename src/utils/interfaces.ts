@@ -9,5 +9,3 @@ export interface Dicty {
     category: string[],
     words: Word[],
 }
-
-export * from './constants';

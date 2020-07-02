@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import './style.scss';
 
 interface IProps {
@@ -9,7 +8,7 @@ interface IProps {
 }
 interface IState {}
 
-export default class DictyTableItem extends React.Component<IProps, IState> {
+class DictyTableItem extends React.Component<IProps, IState> {
     constructor(props) {
         super(props);
     }
@@ -23,4 +22,6 @@ export default class DictyTableItem extends React.Component<IProps, IState> {
             </tr>
         )
     }
-};
+}
+
+export default DictyTableItem;

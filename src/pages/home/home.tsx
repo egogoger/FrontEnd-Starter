@@ -1,9 +1,9 @@
 import * as React from 'react';
-import Navigator from '../../components/navigator/navigator';
-
 import './home.scss';
 
-export default function HomePage() {
+import Navigator from '../../components/Navigator/Render';
+
+function HomePage() {
     return (
         <div className="home">
             <h1>My React App!</h1>
@@ -11,4 +11,6 @@ export default function HomePage() {
             <Navigator />
         </div>
     )
-};
+}
+
+export default HomePage;

@@ -4,7 +4,7 @@ import {Const} from "../utils/constants";
 let dictysModelSymbol = Symbol('Model for dictys');
 let dictysModelEnforcer = Symbol('The only object that can create DictysModel');
 
-export default class DictysModel {
+class DictysModel {
     private dictys: Map<string, Dicty>;
 
     constructor(enforcer) {
@@ -81,4 +81,6 @@ export default class DictysModel {
         this.dictys.get(dicty).words = this.dictys.get(dicty).words.filter(oldWord => oldWord !== word);
         this.saveDictys();
     }
-};
+}
+
+export default DictysModel;

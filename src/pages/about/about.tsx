@@ -1,9 +1,9 @@
 import * as React from 'react';
-import Navigator from '../../components/navigator/navigator';
-
 import './about.scss';
 
-export default function AboutPage() {
+import Navigator from '../../components/Navigator/Render';
+
+function AboutPage() {
     return (
         <div className="about">
             <h1>About page</h1>
@@ -12,3 +12,5 @@ export default function AboutPage() {
         </div>
     );
 }
+
+export default AboutPage;

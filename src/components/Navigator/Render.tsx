@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
-
 import './navigator.scss';
 
-export default function Navigator() {
+import { Link } from 'react-router-dom';
+
+function Navigator() {
     return (
         <div className="navigator">
             <Link to="/" className="navigator__link">Home</Link>
@@ -12,3 +12,5 @@ export default function Navigator() {
         </div>
     );
 }
+
+export default Navigator;
