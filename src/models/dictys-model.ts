@@ -20,7 +20,7 @@ export default class DictysModel {
         }
     }
 
-    static get instance() {
+    static get instance(): DictysModel {
         if (!this[dictysModelSymbol])
             this[dictysModelSymbol] = new DictysModel(dictysModelEnforcer);
         return this[dictysModelSymbol];

@@ -1,7 +1,14 @@
 import * as React from 'react';
-import DictyTableItem from "../dicty-table-item/component";
 
-export default function DictyTableRender(props) {
+import DictyTableItem from "../dicty-table-item/component";
+import {Dicty} from "../../utils/interfaces";
+
+interface IProps {
+    loading: boolean,
+    dictys: Dicty[],
+}
+
+export default function DictyTableRender(props: IProps) {
     return (
         <table className="dicty-table">
             <thead>
@@ -23,7 +30,7 @@ export default function DictyTableRender(props) {
                     : props.dictys.map(item => <DictyTableItem key={item.lang + item.title}
                                                                lang={item.lang}
                                                                title={item.title}
-                                                               category={item.category}/>)}
+                                                               category={item.category.toString()}/>)}
             </tbody>
         </table>
     )
