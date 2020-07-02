@@ -1,16 +1,16 @@
-import * as React from "react";
+import * as React from 'react';
 
 interface IProps {
     adding: boolean;
     category: string;
     language: string;
     title: string;
-    onChange: any;
-    onSubmit: any;
-    onAdd: any;
+    onChange(event: React.ChangeEvent<HTMLInputElement>): void;
+    onSubmit(): void;
+    onAdd(): void;
 }
 
-function AddDictyFormRender(props: IProps) {
+function AddDictyFormRender(props: IProps):JSX.Element {
     if (props.adding) {
         return (
             <form onSubmit={props.onSubmit}>

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import './style.scss';
 
-import Navigator from "Components/Navigator/render";
-import AddDictyInput from "Components/AddDictyForm/logic";
-import DictyTable from "Components/DictyTable/logic";
+import Navigator from 'Components/Navigator/render';
+import AddDictyInput from 'Components/AddDictyForm/logic';
+import DictyTable from 'Components/DictyTable/logic';
 
-function DictysPage() {
+function DictysPage():JSX.Element {
     return (
         <div className="dictys">
             <h1>Dictys page</h1>

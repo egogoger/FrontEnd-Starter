@@ -6,14 +6,13 @@ interface IProps {
     title: string,
     category: string
 }
-interface IState {}
 
-class DictyTableItem extends React.Component<IProps, IState> {
-    constructor(props) {
+class DictyTableItem extends React.Component<IProps> {
+    constructor(props:IProps) {
         super(props);
     }
 
-    render() {
+    render():JSX.Element {
         return (
             <tr className="dicty-table-item">
                 <td>{this.props.lang}</td>

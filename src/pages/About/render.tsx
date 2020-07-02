@@ -3,7 +3,7 @@ import './style.scss';
 
 import Navigator from 'Components/Navigator/render';
 
-function AboutPage() {
+function AboutPage():JSX.Element {
     return (
         <div className="about">
             <h1>About page</h1>

@@ -4,32 +4,32 @@ let http = require('http'),
 http.createServer(function(req, res) {
     let path, type;
     switch (req.url) {
-        case '/bundle.js':
-            path = 'dist/bundle.js';
-            type = 'application/javascript';
-            break;
-        case '/bundle.js.map':
-            path = 'dist/bundle.js.map';
-            type = 'application/javascript';
-            break;
-        case '/style.css':
-            path = 'dist/style.css';
-            type = 'text/css';
-            break;
-        case '/style.css.map':
-            path = 'dist/style.css.map';
-            type = 'text/css';
-            break;
-        default:
-            path = 'dist/index.html';
-            type = 'text/html';
-            break;
+    case '/bundle.js':
+        path = 'dist/bundle.js';
+        type = 'application/javascript';
+        break;
+    case '/bundle.js.map':
+        path = 'dist/bundle.js.map';
+        type = 'application/javascript';
+        break;
+    case '/style.css':
+        path = 'dist/style.css';
+        type = 'text/css';
+        break;
+    case '/style.css.map':
+        path = 'dist/style.css.map';
+        type = 'text/css';
+        break;
+    default:
+        path = 'dist/index.html';
+        type = 'text/html';
+        break;
     }
     fs.readFile(path, function (err, file) {
         if (err) {
             throw err;
         }
-        res.writeHead(200, {"Content-Type": type});
+        res.writeHead(200, {'Content-Type': type});
         res.write(file);
         res.end();
     });

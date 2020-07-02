@@ -3,7 +3,7 @@ import './style.scss';
 
 import { Link } from 'react-router-dom';
 
-function Navigator() {
+function Navigator():JSX.Element {
     return (
         <div className="navigator">
             <Link to="/" className="navigator__link">Home</Link>

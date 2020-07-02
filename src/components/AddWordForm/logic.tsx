@@ -48,12 +48,14 @@ export default class AddWordForm extends React.Component<IProps, IState> {
         })
     }
 
-    render() {return (
-        <AddWordFormRender
-            handleClickOnAdd={this.handleClickOnAdd}
-            handleSubmit={this.handleSubmit}
-            handleInputChange={this.handleInputChange}
-            {...this.state}
-        />
-    )}
+    render():JSX.Element {
+        return (
+            <AddWordFormRender
+                handleClickOnAdd={this.handleClickOnAdd}
+                handleSubmit={this.handleSubmit}
+                handleInputChange={this.handleInputChange}
+                {...this.state}
+            />
+        )
+    }
 };

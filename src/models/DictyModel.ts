@@ -1,13 +1,13 @@
-import {Dicty, Word} from "Interfaces";
-import {Const} from "Constants";
+import {Dicty, Word} from 'Interfaces';
+import {Const} from 'Constants';
 
-let dictysModelSymbol = Symbol('Model for dictys');
-let dictysModelEnforcer = Symbol('The only object that can create DictysModel');
+const dictysModelSymbol = Symbol('Model for dictys');
+const dictysModelEnforcer = Symbol('The only object that can create DictysModel');
 
 class DictyModel {
     private dictys: Map<string, Dicty>;
 
-    constructor(enforcer) {
+    constructor(enforcer: symbol) {
         if (enforcer !== dictysModelEnforcer) {
             throw 'Instantiation failed: use DictysModel.instance instead of new()';
         }
@@ -26,7 +26,7 @@ class DictyModel {
         return this[dictysModelSymbol];
     }
 
-    static set instance(v) {
+    static set instance(v: DictyModel) {
         throw 'Can\'t change constant property!';
     }
 
@@ -34,18 +34,18 @@ class DictyModel {
                     Dicty
      *************************************/
 
-    public async createDicty(dicty: Dicty) {
+    public async createDicty(dicty: Dicty): Promise<void> {
         this.dictys.set(dicty.title, dicty);
         this.saveDictys();
     }
 
-    public async removeDicty(title: string) {
+    public async removeDicty(title: string): Promise<void> {
         this.dictys.delete(title);
         this.saveDictys();
     }
 
-    public async loadDictys() {
-        let oldDictys: Dicty[] = [];
+    public async loadDictys(): Promise<void> {
+        const oldDictys: Dicty[] = [];
         if (localStorage.getItem(Const.LocalStorage.Dictys)) {
             oldDictys.push(JSON.parse(localStorage.getItem(Const.LocalStorage.Dictys)));
         }
@@ -72,12 +72,12 @@ class DictyModel {
                     Words
      *************************************/
 
-    public addWord(word: Word, dicty: string) {
+    public addWord(word: Word, dicty: string): void {
         this.dictys.get(dicty).words.push(word);
         this.saveDictys();
     }
 
-    public removeWord(word: Word, dicty: string) {
+    public removeWord(word: Word, dicty: string): void {
         this.dictys.get(dicty).words = this.dictys.get(dicty).words.filter(oldWord => oldWord !== word);
         this.saveDictys();
     }

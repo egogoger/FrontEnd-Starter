@@ -2,13 +2,13 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import './style.scss';
 
-import {Dicty} from "Interfaces";
-import DictyModel from "Models/DictyModel";
-import AddDictyFormRender from "./render";
-import {addDicty} from "Actions/Dicty";
+import { Dicty } from 'Interfaces';
+import DictyModel from 'Models/DictyModel';
+import AddDictyFormRender from './render';
+import { addDicty } from 'Actions/Dicty';
 
 interface IProps {
-    addDicty: Function,
+    addDicty(dicty: Dicty): void,
 }
 
 interface IState {
@@ -46,7 +46,7 @@ class AddDictyForm extends React.Component<IProps, IState> {
         if (this.state.title.length === 0 || this.state.language.length === 0) {
             return;
         }
-        let dicty: Dicty = {
+        const dicty: Dicty = {
             lang: this.state.language,
             title: this.state.title,
             category: Array.from(this.state.category),
@@ -70,7 +70,7 @@ class AddDictyForm extends React.Component<IProps, IState> {
         }));
     }
 
-    render() {
+    render():JSX.Element {
         return (
             <AddDictyFormRender
                 onSubmit={this.handleSubmit}

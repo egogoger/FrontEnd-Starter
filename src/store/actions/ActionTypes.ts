@@ -1,2 +1,2 @@
-export const ADD_DICTY: string = 'ADD_DICTY';
-export const LOAD_DICTYS: string = 'LOAD_DICTYS';
+export const ADD_DICTY = 'ADD_DICTY';
+export const LOAD_DICTYS = 'LOAD_DICTYS';

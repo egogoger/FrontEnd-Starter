@@ -10,10 +10,10 @@ module.exports = {
         publicPath: '/',
     },
 
-    devtool: "source-map",
+    devtool: 'source-map',
 
     resolve: {
-        extensions: [".ts", ".tsx", ".js", ".jsx"],
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
         alias: {
             Components: path.resolve(__dirname, 'src/components/'),
             Pages: path.resolve(__dirname, 'src/pages/'),
@@ -30,27 +30,21 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader'
-                },
+                use: ['babel-loader', 'eslint-loader'],
             },
             {
                 test: /\.ts(x?)$/,
                 exclude: /node_modules/,
-                use: [
-                    {
-                        loader: "ts-loader"
-                    }
-                ]
+                use: ['ts-loader', 'eslint-loader']
             },
             {
                 test: /\.s[ac]ss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     {
-                        loader: "css-loader",
+                        loader: 'css-loader',
                     },
-                    "sass-loader"
+                    'sass-loader'
                 ]
             },
         ]
@@ -58,7 +52,7 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./src/index.html"
+            template: './src/index.html'
         }),
         new MiniCssExtractPlugin({
             filename: 'style.css',
@@ -66,7 +60,7 @@ module.exports = {
     ],
 
     externals: {
-        "react": "React",
-        "react-dom": "ReactDOM"
+        'react': 'React',
+        'react-dom': 'ReactDOM'
     }
 };
