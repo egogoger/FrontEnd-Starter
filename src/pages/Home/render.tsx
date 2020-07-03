@@ -2,12 +2,12 @@ import * as React from 'react';
 import './style.scss';
 
 import Footer from 'Components/Footer/render';
+import Thanks from 'Components/Thanks/render';
 
 function HomePage():JSX.Element {
     return (
-        <div className="home">
-            <h1>My React App!</h1>
-            <hr className="home__hr"/>
+        <div className='home'>
+            <Thanks />
             <Footer />
         </div>
     )
