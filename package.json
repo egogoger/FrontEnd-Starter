@@ -1,5 +1,24 @@
 {
-  "homepage": "https://github.com/EgorBedov/Dicty-FrontEnd",
+  "name": "FrontEnd Setup 2020",
+  "author": "Egor Bedov",
+  "version": "1.0.0",
+  "description": "Full FrontEnd setup to quickly start developing your next web application",
+  "homepage": "https://github.com/EgorBedov/FrontEnd-Setup",
+  "private": true,
+  "main": "webpack.config.js",
+  "scripts": {
+    "start": "webpack --mode development --watch",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EgorBedov/FrontEnd-Setup.git"
+  },
+  "keywords": ["FrontEnd", "Setup", "React", "Redux", "Typescript"],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EgorBedov/FrontEnd-Setup/issues"
+  },
   "dependencies": {
     "node-static": "^0.7.11",
     "react": "^16.13.1",
@@ -31,24 +50,5 @@
     "typescript": "^3.9.5",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12"
-  },
-  "name": "Dicty",
-  "private": true,
-  "version": "1.0.0",
-  "main": "webpack.config.js",
-  "scripts": {
-    "start": "webpack --mode development --watch",
-    "build": "webpack --mode production"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/EgorBedov/Dicty-FrontEnd.git"
-  },
-  "keywords": [],
-  "author": "Egor Bedov",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/EgorBedov/Dicty-FrontEnd/issues"
-  },
-  "description": ""
+  }
 }
