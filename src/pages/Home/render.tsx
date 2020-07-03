@@ -6,7 +6,7 @@ import Thanks from 'Components/Thanks/render';
 
 function HomePage():JSX.Element {
     return (
-        <div className='home'>
+        <div className='page'>
             <Thanks />
             <Footer />
         </div>

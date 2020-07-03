@@ -1,5 +1,5 @@
-import {Dicty, Word} from 'Interfaces';
-import {Const} from 'Constants';
+import { Dicty, Word } from 'Interfaces';
+import { CONST } from 'Constants';
 
 const dictysModelSymbol = Symbol('Model for dictys');
 const dictysModelEnforcer = Symbol('The only object that can create DictysModel');
@@ -13,8 +13,8 @@ class DictyModel {
         }
 
         this.dictys = new Map();
-        if (localStorage.getItem(Const.LocalStorage.Dictys)) {
-            JSON.parse(localStorage.getItem(Const.LocalStorage.Dictys)).map(item => {
+        if (localStorage.getItem(CONST.LocalStorage.Dictys)) {
+            JSON.parse(localStorage.getItem(CONST.LocalStorage.Dictys)).map(item => {
                 this.dictys.set(item.title, item);
             });
         }
@@ -46,8 +46,8 @@ class DictyModel {
 
     public async loadDictys(): Promise<void> {
         const oldDictys: Dicty[] = [];
-        if (localStorage.getItem(Const.LocalStorage.Dictys)) {
-            oldDictys.push(JSON.parse(localStorage.getItem(Const.LocalStorage.Dictys)));
+        if (localStorage.getItem(CONST.LocalStorage.Dictys)) {
+            oldDictys.push(JSON.parse(localStorage.getItem(CONST.LocalStorage.Dictys)));
         }
 
         this.dictys.clear();
@@ -61,7 +61,7 @@ class DictyModel {
     }
 
     private saveDictys() {
-        localStorage.setItem(Const.LocalStorage.Dictys, JSON.stringify(Array.from(this.dictys.values())));
+        localStorage.setItem(CONST.LocalStorage.Dictys, JSON.stringify(Array.from(this.dictys.values())));
     }
 
     public getDictys(): Dicty[] {

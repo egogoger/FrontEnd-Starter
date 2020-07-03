@@ -14,3 +14,10 @@ body {
   display: flex;
   flex-flow: column;
 }
+
+.page {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  flex: 1;
+}
