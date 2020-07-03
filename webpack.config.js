@@ -30,21 +30,33 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: ['babel-loader', 'eslint-loader'],
+                use: [
+                    'babel-loader',
+                    'eslint-loader'
+                ],
             },
             {
                 test: /\.ts(x?)$/,
                 exclude: /node_modules/,
-                use: ['ts-loader', 'eslint-loader']
+                use: [
+                    'ts-loader',
+                    'eslint-loader'
+                ]
             },
             {
                 test: /\.s[ac]ss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader',
-                    },
+                    'css-loader',
                     'sass-loader'
+                ]
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    }
                 ]
             },
         ]
