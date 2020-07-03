@@ -8,6 +8,7 @@ import './main.scss';
 import HomePage from 'Pages/Home/render';
 import DictysPage from 'Pages/Dictys/render';
 import AboutPage from 'Pages/About/render';
+import SetupsPage from 'Pages/Setups/render';
 import reducer from 'Reducers/MainReducer';
 
 const store = createStore(
@@ -21,7 +22,7 @@ render(
             <Switch>
                 <Route exact path="/" component={HomePage}/>
                 <Route path="/demo" component={DictysPage}/>
-                <Route path="/setups" component={AboutPage}/>
+                <Route path="/setups" component={SetupsPage}/>
                 <Route path="/contribute" component={AboutPage}/>
             </Switch>
         </BrowserRouter>

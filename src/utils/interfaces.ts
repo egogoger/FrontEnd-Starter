@@ -9,3 +9,8 @@ export interface Dicty {
     category: string[],
     words: Word[],
 }
+
+export type Setup = {
+    stack: string[],
+    link: string,
+}
