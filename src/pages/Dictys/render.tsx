@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './style.scss';
 
-import Navigator from 'Components/Navigator/render';
+import Footer from 'Components/Footer/render';
 import AddDictyInput from 'Components/AddDictyForm/logic';
 import DictyTable from 'Components/DictyTable/logic';
 
@@ -12,7 +12,7 @@ function DictysPage():JSX.Element {
             <AddDictyInput />
             <DictyTable />
             <hr className="home__hr"/>
-            <Navigator />
+            <Footer />
         </div>
     );
 }

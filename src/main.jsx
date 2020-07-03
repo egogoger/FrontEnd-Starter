@@ -19,8 +19,9 @@ render(
         <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={HomePage}/>
-                <Route path="/dictys" component={DictysPage}/>
-                <Route path="/about" component={AboutPage}/>
+                <Route path="/demo" component={DictysPage}/>
+                <Route path="/setups" component={AboutPage}/>
+                <Route path="/contribute" component={AboutPage}/>
             </Switch>
         </BrowserRouter>
     </Provider>,
