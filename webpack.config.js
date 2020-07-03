@@ -20,6 +20,7 @@ module.exports = {
             Models: path.resolve(__dirname, 'src/models/'),
             Actions: path.resolve(__dirname, 'src/store/actions/'),
             Reducers: path.resolve(__dirname, 'src/store/reducers/'),
+            Static: path.resolve(__dirname, 'static/'),
             Constants$: path.resolve(__dirname, 'src/utils/constants.ts'),
             Interfaces$: path.resolve(__dirname, 'src/utils/interfaces.ts')
         }
@@ -52,7 +53,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|jpe?g|gif)$/i,
+                test: /\.(png|jpe?g|gif|svg)$/i,
                 use: [
                     {
                         loader: 'file-loader',
