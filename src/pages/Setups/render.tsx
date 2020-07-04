@@ -9,7 +9,7 @@ function SetupsPage():JSX.Element {
     return (
         <div className='page'>
             <div className="setups">
-                <h1 className='setups__header'>Setups</h1>
+                <h1>Setups</h1>
                 <SetupsList
                     setups={[
                         {
