@@ -7,7 +7,6 @@ import { Person } from 'Interfaces';
 type IProps = {
     loading: boolean,
     persons: Person[],
-    onClick(person: Person): void,
 }
 
 function PersonTableRender(props: IProps):JSX.Element {
@@ -31,8 +30,7 @@ function PersonTableRender(props: IProps):JSX.Element {
                         <PersonTableItem
                             key={item.name + item.surname}
                             name={item.name}
-                            surname={item.surname}
-                            onClick={props.onClick}/>)}
+                            surname={item.surname}/>)}
             </tbody>
         </table>
     )

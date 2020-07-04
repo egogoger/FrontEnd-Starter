@@ -1,10 +1,13 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 
 import { Person } from 'Interfaces';
 import PersonTableItemRender from 'Components/PersonTableItem/render';
+import { removePerson } from 'Actions/Person';
+import PersonModel from 'Models/PersonModel';
 
 type IProps = Person & {
-    onClick(person: Person): void,
+    removePerson(person: Person): void,
 }
 
 class PersonTableItem extends React.Component<IProps> {
@@ -15,7 +18,8 @@ class PersonTableItem extends React.Component<IProps> {
     }
 
     private handleOnClick() {
-        this.props.onClick({name: this.props.name, surname: this.props.surname});
+        this.props.removePerson({name: this.props.name, surname: this.props.surname});
+        PersonModel.instance.savePersons();
     }
 
     render():JSX.Element {
@@ -28,4 +32,4 @@ class PersonTableItem extends React.Component<IProps> {
     }
 }
 
-export default PersonTableItem;
+export default connect(null, { removePerson })(PersonTableItem);
