@@ -54,4 +54,4 @@ rm -rf src/components
 mkdir src/components
 
 # Delete clean file itself
-#rm clean.sh
+rm clean.sh
