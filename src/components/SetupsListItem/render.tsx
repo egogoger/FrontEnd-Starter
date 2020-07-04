@@ -16,7 +16,7 @@ interface IProps {
 function SetupsListItem(props: IProps):JSX.Element {
     return (
         <div className='setups-list-item'>
-            <h3 className='setups-list-item__header'>Setup {props.index}</h3>
+            <h2 className='setups-list-item__header'>Setup {props.index}</h2>
             <ul className='setups-list-item__stack'>
                 {props.setup.stack.map(tech => {
                     switch (tech) {
