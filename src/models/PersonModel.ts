@@ -1,6 +1,6 @@
 import {Person} from 'Interfaces';
 import {CONST} from 'Constants';
-import store from "../store/store";
+import store from '../store/store';
 
 const personModelSymbol = Symbol('Model for person');
 const personModelEnforcer = Symbol('The only object that can create PersonModel');
@@ -38,7 +38,12 @@ class PersonModel {
 
     public async loadPersons(): Promise<Person[]> {
         try {
-            return JSON.parse(localStorage.getItem(CONST.LOCAL_STORAGE.PERSONS));
+            const persons = JSON.parse(localStorage.getItem(CONST.LOCAL_STORAGE.PERSONS));
+            if (persons === null) {
+                return [];
+            } else {
+                return persons;
+            }
         }
         catch (e) {
             return [];

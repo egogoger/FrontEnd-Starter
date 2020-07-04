@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import personsReducer from './Dicty';
+import personsReducer from './Person';
 
 const reducer = combineReducers({
     persons: personsReducer,

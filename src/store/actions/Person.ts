@@ -3,9 +3,9 @@ import { Person } from 'Interfaces';
 
 export interface IPersonAction {
     type: string,
-    dicty?: Person,
-    dictys?: Person[],
+    person?: Person,
+    persons?: Person[],
 }
 
-export const addPerson = (dicty: Person):IPersonAction => ({ type: types.ADD_PERSON, dicty });
-export const loadPersons = (dictys: Person[]):IPersonAction => ({ type: types.LOAD_PERSON, dictys });
+export const addPerson = (person: Person):IPersonAction => ({ type: types.ADD_PERSON, person });
+export const loadPersons = (persons: Person[]):IPersonAction => ({ type: types.LOAD_PERSON, persons });
