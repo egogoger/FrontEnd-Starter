@@ -1,26 +1,23 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import './main.scss';
 
+import store from './store/store';
 import HomePage from 'Pages/Home/render';
-import DictysPage from 'Pages/Dictys/render';
-import AboutPage from 'Pages/About/render';
-import reducer from 'Reducers/MainReducer';
-
-const store = createStore(
-    reducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+import DemoPage from 'Pages/Demo/render';
+import ContributionsPage from 'Pages/Contribute/render';
+import SetupsPage from 'Pages/Setups/render';
 
 render(
     <Provider store={store}>
         <BrowserRouter>
             <Switch>
-                <Route exact path="/" component={HomePage}/>
-                <Route path="/dictys" component={DictysPage}/>
-                <Route path="/about" component={AboutPage}/>
+                <Route exact path='/' component={HomePage}/>
+                <Route path='/demo' component={DemoPage}/>
+                <Route path='/setups' component={SetupsPage}/>
+                <Route path='/contribute' component={ContributionsPage}/>
             </Switch>
         </BrowserRouter>
     </Provider>,

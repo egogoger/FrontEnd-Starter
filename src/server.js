@@ -21,8 +21,16 @@ http.createServer(function(req, res) {
         type = 'text/css';
         break;
     default:
-        path = 'dist/index.html';
-        type = 'text/html';
+        if (req.url.includes('.png')) {
+            path = `dist${req.url}`;
+            type = 'image/png';
+        } else if (req.url.includes('.svg')) {
+            path = `dist${req.url}`;
+            type = 'image/svg+xml';
+        } else {
+            path = 'dist/index.html';
+            type = 'text/html';
+        }
         break;
     }
     fs.readFile(path, function (err, file) {

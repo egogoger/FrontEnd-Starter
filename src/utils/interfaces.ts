@@ -1,11 +1,16 @@
-export interface Word {
-    orig: string,
-    trans: string,
+export type Person = {
+    name: string,
+    surname: string,
 }
 
-export interface Dicty {
+export type Setup = {
+    stack: string[],
+    link: string,
+}
+
+export type Contribution = {
+    icon: string,
     title: string,
-    readonly lang: string,
-    category: string[],
-    words: Word[],
+    message: string,
+    link: string,
 }

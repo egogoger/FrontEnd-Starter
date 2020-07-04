@@ -20,6 +20,7 @@ module.exports = {
             Models: path.resolve(__dirname, 'src/models/'),
             Actions: path.resolve(__dirname, 'src/store/actions/'),
             Reducers: path.resolve(__dirname, 'src/store/reducers/'),
+            Static: path.resolve(__dirname, 'static/'),
             Constants$: path.resolve(__dirname, 'src/utils/constants.ts'),
             Interfaces$: path.resolve(__dirname, 'src/utils/interfaces.ts')
         }
@@ -30,21 +31,31 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: ['babel-loader', 'eslint-loader'],
+                use: [
+                    'babel-loader',
+                    'eslint-loader'
+                ],
             },
             {
                 test: /\.ts(x?)$/,
                 exclude: /node_modules/,
-                use: ['ts-loader', 'eslint-loader']
+                use: [
+                    'ts-loader',
+                    'eslint-loader'
+                ]
             },
             {
                 test: /\.s[ac]ss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader',
-                    },
+                    'css-loader',
                     'sass-loader'
+                ]
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                use: [
+                    'file-loader'
                 ]
             },
         ]
