@@ -4,8 +4,6 @@
 
 Start your next web application with up-to-date development tools without a struggle of setting them up. Just download it and you're ready to go!
 
-This repository is aimed to help those who could not be bothered spending time on such a crucial yet boring process of setting up development environment and just want to create.
-
 ## Setups
 List of supported setups:
 * React + Redux + Typescript ([branch](/../../tree/React-Redux-TS/))
