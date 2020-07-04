@@ -1,6 +1,6 @@
 export const CONST = {
-    LocalStorage: {
-        Dictys: 'dictys;',
+    LOCAL_STORAGE: {
+        PERSONS: 'Persons;',
     },
     TECH: {
         TS: 'Typescript',

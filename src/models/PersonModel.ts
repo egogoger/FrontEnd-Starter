@@ -1,86 +1,49 @@
-import { Dicty, Word } from 'Interfaces';
-import { CONST } from 'Constants';
+import {Person} from 'Interfaces';
+import {CONST} from 'Constants';
+import store from "../store/store";
 
-const dictysModelSymbol = Symbol('Model for dictys');
-const dictysModelEnforcer = Symbol('The only object that can create DictysModel');
+const personModelSymbol = Symbol('Model for person');
+const personModelEnforcer = Symbol('The only object that can create PersonModel');
 
-class DictyModel {
-    private dictys: Map<string, Dicty>;
-
+class PersonModel {
     constructor(enforcer: symbol) {
-        if (enforcer !== dictysModelEnforcer) {
-            throw 'Instantiation failed: use DictysModel.instance instead of new()';
-        }
-
-        this.dictys = new Map();
-        if (localStorage.getItem(CONST.LocalStorage.Dictys)) {
-            JSON.parse(localStorage.getItem(CONST.LocalStorage.Dictys)).map(item => {
-                this.dictys.set(item.title, item);
-            });
+        if (enforcer !== personModelEnforcer) {
+            throw 'Instantiation failed: use PersonsModel.instance instead of new()';
         }
     }
 
-    static get instance(): DictyModel {
-        if (!this[dictysModelSymbol])
-            this[dictysModelSymbol] = new DictyModel(dictysModelEnforcer);
-        return this[dictysModelSymbol];
+    static get instance(): PersonModel {
+        if (!this[personModelSymbol])
+            this[personModelSymbol] = new PersonModel(personModelEnforcer);
+        return this[personModelSymbol];
     }
 
-    static set instance(v: DictyModel) {
+    static set instance(v: PersonModel) {
         throw 'Can\'t change constant property!';
     }
 
     /**************************************
-                    Dicty
+                    Person
      *************************************/
 
-    public async createDicty(dicty: Dicty): Promise<void> {
-        this.dictys.set(dicty.title, dicty);
-        this.saveDictys();
+    public async savePersons(): Promise<void> {
+        localStorage.setItem(
+            CONST.LOCAL_STORAGE.PERSONS,
+            JSON.stringify(store.getState().persons));
     }
 
-    public async removeDicty(title: string): Promise<void> {
-        this.dictys.delete(title);
-        this.saveDictys();
+    public async deleteAllPersons(): Promise<void> {
+        localStorage.removeItem(CONST.LOCAL_STORAGE.PERSONS);
     }
 
-    public async loadDictys(): Promise<void> {
-        const oldDictys: Dicty[] = [];
-        if (localStorage.getItem(CONST.LocalStorage.Dictys)) {
-            oldDictys.push(JSON.parse(localStorage.getItem(CONST.LocalStorage.Dictys)));
+    public async loadPersons(): Promise<Person[]> {
+        try {
+            return JSON.parse(localStorage.getItem(CONST.LOCAL_STORAGE.PERSONS));
         }
-
-        this.dictys.clear();
-        oldDictys.forEach(dicty => {
-            this.dictys.set(dicty.title, dicty);
-        });
-    }
-
-    public checkTitle(title: string): boolean {
-        return this.dictys.has(title);
-    }
-
-    private saveDictys() {
-        localStorage.setItem(CONST.LocalStorage.Dictys, JSON.stringify(Array.from(this.dictys.values())));
-    }
-
-    public getDictys(): Dicty[] {
-        return Array.from(this.dictys.values());
-    }
-
-    /**************************************
-                    Words
-     *************************************/
-
-    public addWord(word: Word, dicty: string): void {
-        this.dictys.get(dicty).words.push(word);
-        this.saveDictys();
-    }
-
-    public removeWord(word: Word, dicty: string): void {
-        this.dictys.get(dicty).words = this.dictys.get(dicty).words.filter(oldWord => oldWord !== word);
-        this.saveDictys();
+        catch (e) {
+            return [];
+        }
     }
 }
 
-export default DictyModel;
+export default PersonModel;
