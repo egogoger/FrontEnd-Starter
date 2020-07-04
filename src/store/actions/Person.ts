@@ -8,4 +8,5 @@ export interface IPersonAction {
 }
 
 export const addPerson = (person: Person):IPersonAction => ({ type: types.ADD_PERSON, person });
-export const loadPersons = (persons: Person[]):IPersonAction => ({ type: types.LOAD_PERSON, persons });
+export const removePerson = (person: Person):IPersonAction => ({ type: types.REMOVE_PERSON, person });
+export const loadPersons = (persons: Person[]):IPersonAction => ({ type: types.LOAD_PERSONS, persons });

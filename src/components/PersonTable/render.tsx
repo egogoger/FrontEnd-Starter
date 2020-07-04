@@ -4,9 +4,10 @@ import './style.scss';
 import PersonTableItem from 'Components/PersonTableItem/render';
 import { Person } from 'Interfaces';
 
-interface IProps {
+type IProps = {
     loading: boolean,
     persons: Person[],
+    onClick(person: Person): void,
 }
 
 function PersonTableRender(props: IProps):JSX.Element {
@@ -30,7 +31,8 @@ function PersonTableRender(props: IProps):JSX.Element {
                         <PersonTableItem
                             key={item.name + item.surname}
                             name={item.name}
-                            surname={item.surname}/>)}
+                            surname={item.surname}
+                            onClick={props.onClick}/>)}
             </tbody>
         </table>
     )
