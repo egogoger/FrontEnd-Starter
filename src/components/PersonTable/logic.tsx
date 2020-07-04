@@ -19,15 +19,20 @@ interface IState {
 class PersonTable extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
-        this.state = {
-            loading: true,
-        };
-        PersonModel.instance.loadPersons().then(persons => {
-            props.loadPersons(persons);
-        });
-
         this.getPersons = this.getPersons.bind(this);
-        setTimeout(() => this.getPersons(), 2000);
+        if (props.persons.length === 0) {
+            this.state = {
+                loading: true,
+            };
+            setTimeout(() => this.getPersons(), 2000);
+            PersonModel.instance.loadPersons().then(persons => {
+                props.loadPersons(persons);
+            });
+        } else {
+            this.state = {
+                loading: false,
+            }
+        }
     }
 
     private async getPersons() {

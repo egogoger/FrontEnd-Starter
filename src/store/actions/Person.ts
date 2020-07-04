@@ -1,7 +1,7 @@
 import * as types from './ActionTypes';
 import { Person } from 'Interfaces';
 
-export interface IPersonAction {
+export type IPersonAction = {
     type: string,
     person?: Person,
     persons?: Person[],

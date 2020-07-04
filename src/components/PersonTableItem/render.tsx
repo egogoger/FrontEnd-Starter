@@ -15,7 +15,6 @@ class PersonTableItem extends React.Component<IProps> {
     }
 
     private handleOnClick() {
-        console.log(this.props);
         this.props.onClick({name: this.props.name, surname: this.props.surname});
     }
 
