@@ -7,7 +7,7 @@ import PersonInputRender from './render';
 import { addPerson } from 'Actions/Person';
 import PersonModel from 'Models/PersonModel';
 
-interface IProps {
+type IProps = {
     addPerson(person: Person): void,
 }
 
@@ -23,7 +23,8 @@ class PersonInput extends React.Component<IProps, Person> {
         this.handleInputChange = this.handleInputChange.bind(this);
     }
 
-    private handleSubmit() {
+    private handleSubmit(e) {
+        e.preventDefault();
         if (this.state.name.length === 0 || this.state.surname.length === 0) {
             return;
         }
@@ -39,7 +40,7 @@ class PersonInput extends React.Component<IProps, Person> {
             this.setState({
                 name: '',
                 surname: '',
-            })
+            });
         });
     }
 

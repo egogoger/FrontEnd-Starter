@@ -5,7 +5,7 @@ import { Person } from 'Interfaces';
 
 type IProps = Person & {
     onChange(event: React.ChangeEvent<HTMLInputElement>): void;
-    onSubmit(): void;
+    onSubmit(e: React.ChangeEvent<HTMLFormElement>): void;
 }
 
 function PersonInputRender(props: IProps):JSX.Element {
