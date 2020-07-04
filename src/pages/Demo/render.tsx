@@ -8,7 +8,7 @@ import PersonTable from 'Components/PersonTable/logic';
 function DemoPage():JSX.Element {
     return (
         <div className="page">
-            <div className="persons">
+            <div className="demo">
                 <h1>Demo</h1>
                 <PersonInputRender />
                 <PersonTable />

@@ -1,4 +1,6 @@
 import * as React from 'react';
+import './style.scss';
+
 import { Person } from 'Interfaces';
 
 type IProps = Person & {
@@ -8,22 +10,22 @@ type IProps = Person & {
 
 function PersonInputRender(props: IProps):JSX.Element {
     return (
-        <form onSubmit={props.onSubmit}>
+        <form className='person-input' onSubmit={props.onSubmit}>
             <input
-                name="name"
+                name='name'
                 value={props.name}
-                type="text"
-                placeholder="name"
+                type='text'
+                placeholder='Name'
                 onChange={props.onChange}
             />
             <input
-                name="surname"
+                name='surname'
                 value={props.surname}
-                type="text"
-                placeholder="Surname"
+                type='text'
+                placeholder='Surname'
                 onChange={props.onChange}
             />
-            <input type="submit" value="Add" />
+            <input type='submit' value='Add' />
         </form>)
 }
 

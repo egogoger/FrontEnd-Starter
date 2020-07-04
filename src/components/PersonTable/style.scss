@@ -1,0 +1,10 @@
+.person-table {
+  width: 80%;
+  border-collapse: collapse;
+
+  &, & td, & th {
+    text-align: left;
+    padding: 15px;
+    border: 1px solid #ddd;
+  }
+}

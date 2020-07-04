@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './style.scss';
+
 import { Person } from 'Interfaces';
 
 class PersonTableItem extends React.Component<Person> {
@@ -12,6 +13,7 @@ class PersonTableItem extends React.Component<Person> {
             <tr className='person-table-item'>
                 <td>{this.props.name}</td>
                 <td>{this.props.surname}</td>
+                <td className='person-table-item'>&#215;</td>
             </tr>
         )
     }

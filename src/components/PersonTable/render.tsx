@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './style.scss';
 
 import PersonTableItem from 'Components/PersonTableItem/render';
 import { Person } from 'Interfaces';
@@ -13,19 +14,17 @@ function PersonTableRender(props: IProps):JSX.Element {
         <table className='person-table'>
             <thead>
                 <tr>
-                    <th>Language</th>
                     <th>Name</th>
-                    <th>Category</th>
-                    <th></th>
+                    <th>Surname</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 {props.loading
                     ? <tr>
                         <th>Loading...</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th>Loading...</th>
+                        <th>Loading...</th>
                     </tr>
                     : props.persons.map(item =>
                         <PersonTableItem
