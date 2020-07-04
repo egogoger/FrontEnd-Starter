@@ -7,7 +7,7 @@ import './main.scss';
 import store from './store/store';
 import HomePage from 'Pages/Home/render';
 import DemoPage from 'Pages/Demo/render';
-import AboutPage from 'Pages/About/render';
+import ContributionsPage from 'Pages/Contribute/render';
 import SetupsPage from 'Pages/Setups/render';
 
 render(
@@ -17,7 +17,7 @@ render(
                 <Route exact path='/' component={HomePage}/>
                 <Route path='/demo' component={DemoPage}/>
                 <Route path='/setups' component={SetupsPage}/>
-                <Route path='/contribute' component={AboutPage}/>
+                <Route path='/contribute' component={ContributionsPage}/>
             </Switch>
         </BrowserRouter>
     </Provider>,
