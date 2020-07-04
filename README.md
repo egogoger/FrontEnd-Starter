@@ -7,24 +7,31 @@ Start your next web application with up-to-date development tools without a stru
 This repository is aimed to help those who could not be bothered spending time on such a crucial yet boring process of setting up development environment and just want to create.
 > You can find different setups in branches
 
-## Start
-Install the setup
+## Usage
+#### Install the setup
 ```bash
 git clone https://github.com/EgorBedov/FrontEnd-Setup
 cd FrontEnd-Setup
 npm install
 ```
 
-Run webpack
+#### Run webpack
 ```bash
 npm start
 ```
 
-Run server
+#### Run server
 ```bash
 node src/server.js
 ```
 > Switch to different terminal for that purpose
+
+#### Clean setup
+Running this script will remove default pages, components, models, actions and reducers. The script itself will be removed as well.
+```
+./clean.sh
+```
+>It may be necessary to `chmod 755 clean.sh` before running
 
 ## File structure
 You can change the file structure whichever way you want and if you do so, don't forget to change aliases paths in both [Typescript config](../blob/React-Redux-TS/tsconfig.json) and [Webpack config](../blob/React-Redux-TS/webpack.config.json).
@@ -39,15 +46,19 @@ You can change the file structure whichever way you want and if you do so, don't
 │   ├── pages/          // Create your pages here
 │   ├── server.js       // Static server
 │   ├── store
-│   │   ├── actions     // Redux's actions and action creators
-│   │   └── reducers    // Redux's reducers
+│   │   ├── actions/    // Redux's actions and action creators
+│   │   ├── reducers/   // Redux's reducers
+│   │   └── store.ts    // Redux's store
 │   └── utils
+│       ├── assets.d.ts     // Assets declarations (TS)
 │       ├── constants.ts    // Global constants
-│       └── interfaces.ts   // Global interfaces
-├── .babelrc            // Babel config
+│       ├── interfaces.ts   // Global interfaces
+│       └── variables.scss  // Global CSS variables
+├── static/             // Static files
 ├── .eslintignore
 ├── .eslintrc.json      // ESLint config
 ├── .gitignore
+├── clean.sh            // Script to delete old files
 ├── package.json
 ├── tsconfig.json       // Typescript config
 └── webpack.config.js   // Webpack config
