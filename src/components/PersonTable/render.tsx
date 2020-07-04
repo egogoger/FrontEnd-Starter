@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './style.scss';
 
-import PersonTableItem from 'Components/PersonTableItem/render';
+import PersonTableItem from 'Components/PersonTableItem/logic';
 import { Person } from 'Interfaces';
 
 type IProps = {
