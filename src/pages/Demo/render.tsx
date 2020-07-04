@@ -4,6 +4,7 @@ import './style.scss';
 import Footer from 'Components/Footer/render';
 import PersonInputRender from 'Components/PersonInput/logic';
 import PersonTable from 'Components/PersonTable/logic';
+import PersonTableButton from 'Components/PersonTableButton/logic';
 
 function DemoPage():JSX.Element {
     return (
@@ -12,7 +13,7 @@ function DemoPage():JSX.Element {
                 <h1>Demo</h1>
                 <PersonInputRender />
                 <PersonTable />
-                {/*<Button />*/}
+                <PersonTableButton />
             </div>
             <Footer />
         </div>

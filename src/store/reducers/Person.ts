@@ -1,4 +1,4 @@
-import { ADD_PERSON, LOAD_PERSONS, REMOVE_PERSON } from 'Actions/ActionTypes';
+import * as types from 'Actions/ActionTypes';
 import { Person } from 'Interfaces';
 import { IPersonAction } from 'Actions/Person';
 
@@ -9,14 +9,17 @@ function personsReducer(state: StateType = initialState, action: IPersonAction):
     let newState = [...state];
 
     switch (action.type) {
-    case ADD_PERSON:
+    case types.ADD_PERSON:
         newState.push(action.person);
         break;
-    case LOAD_PERSONS:
+    case types.LOAD_PERSONS:
         newState = action.persons;
         break;
-    case REMOVE_PERSON:
+    case types.REMOVE_PERSON:
         newState = newState.filter(p => p.name !== action.person.name && p.surname !== action.person.surname);
+        break;
+    case types.CLEAR_PERSONS:
+        newState = [];
         break;
     }
 
