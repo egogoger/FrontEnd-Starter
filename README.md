@@ -5,7 +5,15 @@
 Start your next web application with up-to-date development tools without a struggle of setting them up. Just download it and you're ready to go!
 
 This repository is aimed to help those who could not be bothered spending time on such a crucial yet boring process of setting up development environment and just want to create.
-> You can find different setups in branches
+
+## Setups
+List of supported setups:
+* React + Redux + Typescript ([branch](/../../tree/React-Redux-TS/))
+
+Default technological stack:
+* Webpack module bundler
+* ESLint linter
+* Babel transpiler
 
 ## Usage
 #### Install the setup
@@ -28,7 +36,7 @@ node src/server.js
 
 #### Clean setup
 Running this script will remove default pages, components, models, actions and reducers. The script itself will be removed as well.
-```
+```bash
 ./clean.sh
 ```
 >It may be necessary to `chmod 755 clean.sh` before running
@@ -63,15 +71,6 @@ You can change the file structure whichever way you want and if you do so, don't
 ├── tsconfig.json       // Typescript config
 └── webpack.config.js   // Webpack config
 ```
-
-## Different setups
-Default technological stack:
-* Webpack module bundler
-* ESLint linter
-* Babel transpiler
-
-List of supported setups:
-* React + Redux + Typescript ([branch](/../../tree/React-Redux-TS/))
 
 ## License
 [MIT](LICENSE)
