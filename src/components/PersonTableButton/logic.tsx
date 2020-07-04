@@ -17,9 +17,7 @@ class PersonTableItem extends React.Component<IProps> {
     }
 
     private handleOnClick() {
-        console.log(this.props);
         this.props.clearPersons();
-        console.log(this.props);
         PersonModel.instance.savePersons();
     }
 
