@@ -5,7 +5,7 @@ import { IPersonAction } from 'Actions/Person';
 type StateType = Person[];
 const initialState: StateType = [];
 
-function dictysReducer(state: StateType = initialState, action: IPersonAction): StateType {
+function personsReducer(state: StateType = initialState, action: IPersonAction): StateType {
     let newState = [...state];
 
     switch (action.type) {
@@ -20,4 +20,4 @@ function dictysReducer(state: StateType = initialState, action: IPersonAction): 
     return newState;
 }
 
-export default dictysReducer;
+export default personsReducer;

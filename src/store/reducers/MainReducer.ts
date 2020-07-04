@@ -1,8 +1,8 @@
-import {combineReducers} from 'redux';
-import dictysReducer from './Dicty';
+import { combineReducers } from 'redux';
+import personsReducer from './Dicty';
 
 const reducer = combineReducers({
-    dictys: dictysReducer,
+    persons: personsReducer,
 });
 
 export default reducer;
