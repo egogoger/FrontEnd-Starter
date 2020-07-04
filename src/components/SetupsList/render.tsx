@@ -2,7 +2,7 @@ import * as React from 'react';
 import './style.scss';
 
 import SetupsListItem from 'Components/SetupsListItem/render';
-import {Setup} from 'Interfaces';
+import { Setup } from 'Interfaces';
 
 interface IProps {
     setups: Setup[]

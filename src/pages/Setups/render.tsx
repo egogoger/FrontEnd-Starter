@@ -14,7 +14,7 @@ function SetupsPage():JSX.Element {
                     setups={[
                         {
                             stack: [CONST.TECH.REACT, CONST.TECH.REDUX, CONST.TECH.TS],
-                            link: 'https://github.com/EgorBedov/FrontEnd-Setup/tree/React-Redux-TS',
+                            link: 'https://github.com/EgorBedov/FrontEnd-Starter/tree/React-Redux-TS',
                         },
                     ]}/>
             </div>

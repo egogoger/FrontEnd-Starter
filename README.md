@@ -1,6 +1,6 @@
-# FrontEnd Setup 2020
-![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Setup/react?logo=react) ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Setup/redux?logo=redux) ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Setup/dev/typescript?logo=typescript)
-![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Setup/dev/webpack?logo=webpack) ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Setup/dev/eslint?logo=eslint)
+# FrontEnd Starter 2020
+![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/react?logo=react) ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/redux?logo=redux) ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/dev/typescript?logo=typescript)
+![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/dev/webpack?logo=webpack) ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/dev/eslint?logo=eslint)
 
 Start your next web application with up-to-date development tools without a struggle of setting them up. Just download it and you're ready to go!
 
@@ -16,8 +16,8 @@ Default technological stack:
 ## Usage
 #### Install the setup
 ```bash
-git clone https://github.com/EgorBedov/FrontEnd-Setup
-cd FrontEnd-Setup
+git clone https://github.com/EgorBedov/FrontEnd-Starter
+cd FrontEnd-Starter
 npm install
 ```
 

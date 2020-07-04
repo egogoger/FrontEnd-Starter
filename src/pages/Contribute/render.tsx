@@ -12,13 +12,13 @@ function ContributionsPage():JSX.Element {
         {
             icon: ForkIcon,
             title: 'Fork',
-            link: 'https://github.com/EgorBedov/FrontEnd-Setup',
+            link: 'https://github.com/EgorBedov/FrontEnd-Starter',
             message: 'Fork this repository to submit new setups and improvements'
         },
         {
             icon: IssueIcon,
             title: 'Issue',
-            link: 'https://github.com/EgorBedov/FrontEnd-Setup/issues/new',
+            link: 'https://github.com/EgorBedov/FrontEnd-Starter/issues/new',
             message: 'Found a bug or error - create an issue dedicated to it'
         }
     ];

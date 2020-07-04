@@ -1,9 +1,9 @@
 {
-  "name": "frontend-setup-2020",
+  "name": "frontend-starter-2020",
   "author": "Egor Bedov",
   "version": "1.0.0",
   "description": "Full FrontEnd setup to quickly start developing your next web application",
-  "homepage": "https://github.com/EgorBedov/FrontEnd-Setup",
+  "homepage": "https://github.com/EgorBedov/FrontEnd-Starter",
   "private": true,
   "main": "webpack.config.js",
   "scripts": {
@@ -12,18 +12,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EgorBedov/FrontEnd-Setup.git"
+    "url": "git+https://github.com/EgorBedov/FrontEnd-Starter.git"
   },
   "keywords": [
     "FrontEnd",
     "Setup",
+    "Starter",
     "React",
     "Redux",
     "Typescript"
   ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/EgorBedov/FrontEnd-Setup/issues"
+    "url": "https://github.com/EgorBedov/FrontEnd-Starter/issues"
   },
   "dependencies": {
     "node-static": "^0.7.11",
