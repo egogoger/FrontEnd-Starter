@@ -30,7 +30,8 @@ esac
 ######    Actual cleaning    ######
 ###################################
 
-echo "Deleting..."
+echo "Deleting
+..."
 
 rm -rf src/pages
 rm -rf src/components
@@ -51,6 +52,8 @@ else
   mkdir src/pages
   mkdir src/components
 fi
+
+echo "..."
 
 echo '' > src/main.scss
 
@@ -78,6 +81,9 @@ echo "" > README.md
 rm LICENSE
 
 # Delete clean file itself
-rm clean.sh
-echo "
+#rm clean.sh
+
+echo "...
+done
+
 I did my best but you still have to change package.json yourself"
