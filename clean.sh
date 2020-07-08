@@ -19,6 +19,13 @@ while getopts "ahn:" flag; do
 	esac
 done
 
+SED_MODE="normal"
+case "$OSTYPE" in
+  darwin*)  SED_MODE="crazy" ;;
+  bsd*)     SED_MODE="crazy" ;;
+  *)        SED_MODE="crazy" ;;
+esac
+
 ###################################
 ######    Actual cleaning    ######
 ###################################
@@ -35,24 +42,34 @@ else
   mkdir src/pages
   mkdir src/components
 
-  sed -i '18,20d;23d' webpack.config.js
-  sed -i '12,14d;17d' webpack.config.js
+  if [[ "$SED_MODE" == "crazy" ]]; then
+    sed -i '' -e '18,20d;23d' webpack.config.js
+    sed -i '' -e '12,14d;17d' webpack.config.js
+  else
+    sed -i '18,20d;23d' webpack.config.js
+    sed -i '12,14d;17d' webpack.config.js
+  fi
 fi
 
 echo '' > src/main.scss
-sed -i '8,11d;17,20d' src/main.jsx
+
+rm src/store/reducers/Person.ts
+if [[ "$SED_MODE" == "crazy" ]]; then
+  sed -i '' -e '8,11d;17,20d' src/main.jsx
+  sed -i '' -e '5d' src/store/reducers/MainReducer.ts
+else
+  sed -i '8,11d;17,20d' src/main.jsx
+  sed -i '5d' src/store/reducers/MainReducer.ts
+fi
 
 # Clean Utils
 echo '' > src/utils/constants.ts
 echo '' > src/utils/interfaces.ts
 echo '' > src/utils/variables.scss
 
-# Clean store
-sed -i '5d' src/store/reducers/MainReducer.ts
 rm src/store/reducers/Person.ts
-
-echo "" > src/store/actions/ActionTypes.ts
 rm src/store/actions/Person.ts
+echo "" > src/store/actions/ActionTypes.ts
 
 # Clean README
 echo "" > README.md
