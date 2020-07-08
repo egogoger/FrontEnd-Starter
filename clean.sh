@@ -30,25 +30,26 @@ esac
 ######    Actual cleaning    ######
 ###################################
 
+echo "Deleting..."
+
 rm -rf src/pages
 rm -rf src/components
 if [[ "$MODE" == "full" ]]; then
   rm -rf static
   rm -rf src/models
+  if [[ "$SED_MODE" == "crazy" ]]; then
+    sed -i '' -e '18,20d;23d' webpack.config.js
+    sed -i '' -e '12,14d;17d' tsconfig.json
+  else
+    sed -i '18,20d;23d' webpack.config.js
+    sed -i '12,14d;17d' tsconfig.json
+  fi
 else
   rm -rf static/icons
   rm -rf static/images
   rm src/models/PersonModel.ts
   mkdir src/pages
   mkdir src/components
-
-  if [[ "$SED_MODE" == "crazy" ]]; then
-    sed -i '' -e '18,20d;23d' webpack.config.js
-    sed -i '' -e '12,14d;17d' webpack.config.js
-  else
-    sed -i '18,20d;23d' webpack.config.js
-    sed -i '12,14d;17d' webpack.config.js
-  fi
 fi
 
 echo '' > src/main.scss
@@ -78,4 +79,5 @@ rm LICENSE
 
 # Delete clean file itself
 rm clean.sh
-echo "I did my best but you still have to change package.json yourself"
+echo "
+I did my best but you still have to change package.json yourself"
