@@ -3,7 +3,7 @@ Start your next web application with up-to-date development tools without a stru
 
 ## Setups
 List of supported setups:
-* React + Redux + Typescript ([branch](/../tree/React-Redux-TS/))
+* React + Redux + Typescript ([branch](/../../../tree/React-Redux-TS/))
 
 Default technological stack:
 * Webpack module bundler
