@@ -7,9 +7,9 @@ print_usage() {
 	h : show help"
 }
 
-MODE="patrial"
+MODE="partial"
 
-while getopts "ahn:" flag; do
+while getopts "ah:" flag; do
 	case "${flag}" in
 		a) MODE="full" ;;
 		h) print_usage
@@ -58,10 +58,10 @@ echo "..."
 echo '' > src/main.scss
 
 if [[ "$SED_MODE" == "crazy" ]]; then
-  sed -i '' -e '8,11d;17,20d' src/main.jsx
+  sed -i '' -e '8,11d;17,20d' src/main.tsx
   sed -i '' -e '5d' src/store/reducers/MainReducer.ts
 else
-  sed -i '8,11d;17,20d' src/main.jsx
+  sed -i '8,11d;17,20d' src/main.tsx
   sed -i '5d' src/store/reducers/MainReducer.ts
 fi
 
@@ -81,7 +81,7 @@ echo "" > README.md
 rm LICENSE
 
 # Delete clean file itself
-#rm clean.sh
+rm clean.sh
 
 echo "...
 done
