@@ -53,7 +53,6 @@ fi
 
 echo '' > src/main.scss
 
-rm src/store/reducers/Person.ts
 if [[ "$SED_MODE" == "crazy" ]]; then
   sed -i '' -e '8,11d;17,20d' src/main.jsx
   sed -i '' -e '5d' src/store/reducers/MainReducer.ts
