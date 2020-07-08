@@ -14,10 +14,19 @@ Default technological stack:
 * Babel transpiler
 
 ## Usage
+#### Manage repo
+1) Mirror repository - [Github tutorial](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository)
+2) Choose branch and delete all others 
+
+Manually:
+```bash
+git branch -d branch_name
+git push origin --delete <branch_name>
+git push origin :<branch_name>
+```
+Or delete it on GitHub then do `git fetch --all`
 #### Install the setup
 ```bash
-git clone https://github.com/EgorBedov/FrontEnd-Starter
-cd FrontEnd-Starter
 npm install
 ```
 
@@ -30,14 +39,14 @@ npm start
 ```bash
 node src/server.js
 ```
-> Switch to different terminal for that purpose
+> Switch to different terminal beforehand
 
-#### Clean setup
-Running this script will remove default pages, components, models, actions and reducers. The script itself will be removed as well.
+## Clean setup
+Run this script to remove default pages, components, models, actions and reducers.
 ```bash
-./clean.sh
+clean.sh [-ah]
 ```
->It may be necessary to `chmod 755 clean.sh` before running
+> Use -a option to completely delete components, pages, models and static folders
 
 ## File structure
 You can change the file structure whichever way you want and if you do so, don't forget to change aliases paths in both [Typescript config](../blob/React-Redux-TS/tsconfig.json) and [Webpack config](../blob/React-Redux-TS/webpack.config.json).
@@ -47,10 +56,10 @@ You can change the file structure whichever way you want and if you do so, don't
 ├── src
 │   ├── components/     // Create your components here
 │   ├── index.html
-│   ├── main.jsx
+│   ├── main.tsx
 │   ├── models/         // Create your models here
 │   ├── pages/          // Create your pages here
-│   ├── server.js       // Static server
+│   ├── server.ts       // Static server
 │   ├── store
 │   │   ├── actions/    // Redux's actions and action creators
 │   │   ├── reducers/   // Redux's reducers
@@ -61,6 +70,7 @@ You can change the file structure whichever way you want and if you do so, don't
 │       ├── interfaces.ts   // Global interfaces
 │       └── variables.scss  // Global CSS variables
 ├── static/             // Static files
+├── .babelrc            // Babel config
 ├── .eslintignore
 ├── .eslintrc.json      // ESLint config
 ├── .gitignore
