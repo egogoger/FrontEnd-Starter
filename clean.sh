@@ -53,5 +53,11 @@ rm src/models/PersonModel.ts
 rm -rf src/components
 mkdir src/components
 
+# Clean README
+echo "" > README.md
+
+# Delete LICENSE
+rm LICENSE
+
 # Delete clean file itself
 rm clean.sh
