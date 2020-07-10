@@ -9,27 +9,28 @@ class Router {
         this.current = null;
     }
 
-    addRoute(path: string, page: Controller) {
+    addRoute(path: string, page: Controller): void {
         this.controllers.set(path, page);
     }
 
-    route() {
+    route(): void {
         window.addEventListener('popstate', () => {
             this.redirect(window.location.pathname);
         });
+        this.redirect('/');
     }
 
-    private redirect(path: string) {
-        this.current.hideSelf();
+    private redirect(path: string): void {
+        if (this.current) {
+            this.current.hideSelf();
+        }
 
-        let controller = this.controllers.get(path);
+        const controller = this.controllers.get(path);
         if (!controller) {
             path = '404';
-            this.current = this.controllers.get('404');
         }
-        
+        this.current = this.controllers.get(path);
         window.history.pushState({}, path, window.location.origin + path);
-
         this.current.showSelf();
     }
 }

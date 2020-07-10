@@ -3,12 +3,8 @@ class View {
 
     }
 
-    public hideSelf(): void {
-
-    }
-
-    public showSelf(): void {
-
+    public render(): string {
+        return '';
     }
 }
 

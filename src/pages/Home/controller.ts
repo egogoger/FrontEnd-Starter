@@ -1,38 +1,23 @@
 import Controller from '../../core/controller';
 import View from 'Core/view';
+import HomeView from "Pages/Home/view";
 
 class HomePage extends Controller {
     view: View;
-    // listeners: Object;
 
-    constructor() {
-        super();
+    constructor(base: Element) {
+        super(base);
+        this.view = new HomeView();
     }
 
-    public showSelf(): void {
-        this.view.hideSelf();
+    protected addAllListeners(): void {
+        this.addListener(document.querySelector('.home'), 'click', this.handleClickOnHome);
     }
 
-    protected pageDidShow(): void {}
-
-    public hideSelf(): void {
-        this.removeAllListeners();
-        this.view.hideSelf();
+    handleClickOnHome(): void {
+        console.log('click');
+        console.log(this);
     }
-
-    public addListener(): void {
-
-    }
-
-    public removeListener(): void {
-
-    }
-
-    protected removeAllListeners(): void {
-
-    }
-
-
 }
 
 export default HomePage;

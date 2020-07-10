@@ -6,7 +6,9 @@ class HomeView extends View {
         super();
     }
 
-
+    public render(): string {
+        return `<div class='home'>home iopta</div>`
+    }
 }
 
 export default HomeView;

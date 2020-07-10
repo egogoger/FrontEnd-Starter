@@ -22,6 +22,7 @@ module.exports = {
             Reducers: path.resolve(__dirname, 'src/store/reducers/'),
             Static: path.resolve(__dirname, 'static/'),
             Core: path.resolve(__dirname, 'src/core/'),
+            Utils: path.resolve(__dirname, 'src/utils/'),
             Constants$: path.resolve(__dirname, 'src/utils/constants.ts'),
             Interfaces$: path.resolve(__dirname, 'src/utils/interfaces.ts')
         }
@@ -69,10 +70,5 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'style.css',
         }),
-    ],
-
-    externals: {
-        'react': 'React',
-        'react-dom': 'ReactDOM'
-    }
+    ]
 };

@@ -1,6 +1,5 @@
 import {Person} from 'Interfaces';
 import {CONST} from 'Constants';
-import store from '../store/store';
 
 const personModelSymbol = Symbol('Model for person');
 const personModelEnforcer = Symbol('The only object that can create PersonModel');
@@ -27,9 +26,9 @@ class PersonModel {
      *************************************/
 
     public async savePersons(): Promise<void> {
-        localStorage.setItem(
-            CONST.LOCAL_STORAGE.PERSONS,
-            JSON.stringify(store.getState().persons));
+        // localStorage.setItem(
+        //     CONST.LOCAL_STORAGE.PERSONS,
+            // JSON.stringify(store.getState().persons));
     }
 
     public async deleteAllPersons(): Promise<void> {

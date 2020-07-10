@@ -1,25 +1,38 @@
+import {removeAllChildrenFrom} from 'Utils/htmlHelpers';
+import View from 'Core/view';
+
+type eListener = EventListenerOrEventListenerObject;
+
 class Controller {
-    listeners: Map<string, Function>;
+    listeners: Map<string, eListener>;
+    base: Element;
+    view: View;
 
-    constructor() {
-
+    constructor(base: Element) {
+        this.listeners = new Map<string, eListener>();
+        this.base = base;
     }
 
-    public showSelf() {
-
+    public showSelf(): void {
+        removeAllChildrenFrom(this.base);
+        this.base.insertAdjacentHTML('afterbegin', this.view.render());
+        this.addAllListeners();
     }
 
-    public hideSelf() {
-
+    public hideSelf(): void {
+        this.removeAllListeners();
+        removeAllChildrenFrom(this.base);
     }
 
-    protected addListener(node: HTMLElement, type: string, handler: Function): void {
-        let key = this.createKey(node, type, handler);
+    protected addAllListeners(): void {}
+
+    protected addListener(node: Element, type: string, handler: eListener): void {
+        const key = this.createKey(node, type, handler);
         this.listeners.set(key, handler);
     }
 
-    protected removeListener(node: HTMLElement, type: string, handler: Function): void {
-        let key = this.createKey(node, type, handler);
+    protected removeListener(node: Element, type: string, handler: eListener): void {
+        const key = this.createKey(node, type, handler);
         this.listeners.delete(key);
     }
 
@@ -27,7 +40,7 @@ class Controller {
         this.listeners.clear();
     }
 
-    private createKey(node: HTMLElement, type: string, handler: Function) {
+    private createKey(node: Element, type: string, handler: eListener) {
         return node.className + type + handler.toString();
     }
 }
