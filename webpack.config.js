@@ -21,6 +21,7 @@ module.exports = {
             Actions: path.resolve(__dirname, 'src/store/actions/'),
             Reducers: path.resolve(__dirname, 'src/store/reducers/'),
             Static: path.resolve(__dirname, 'static/'),
+            Core: path.resolve(__dirname, 'src/core/'),
             Constants$: path.resolve(__dirname, 'src/utils/constants.ts'),
             Interfaces$: path.resolve(__dirname, 'src/utils/interfaces.ts')
         }

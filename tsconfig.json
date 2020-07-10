@@ -15,6 +15,7 @@
       "Actions/*": ["src/store/actions/*"],
       "Reducers/*": ["src/store/reducers/*"],
       "Static/*": ["static/*"],
+      "Core/*": ["src/core/*"],
       "Constants": ["src/utils/constants.ts"],
       "Interfaces": ["src/utils/interfaces.ts"]
     }
