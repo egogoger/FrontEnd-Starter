@@ -4,8 +4,9 @@ import {Setup} from 'Interfaces';
 import SetupsListItem from 'Components/SetupListItem/view';
 
 function SetupsList(setups: Setup[]): string {
-    return `<div class='setups-list'>
-    ${setups.map((setup, index) => SetupsListItem(setup, index + 1))}
+    return `
+<div class='setups-list'>
+    ${setups.reduce((output, setup, index) => output + SetupsListItem(setup, index + 1), '')}
 </div>`
 }
 
