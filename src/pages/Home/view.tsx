@@ -1,6 +1,7 @@
 import './style.scss';
 import View from 'Core/view';
-import Thanks from 'Components/Thanks/Thanks';
+import Thanks from 'Components/Thanks/view';
+import Footer from 'Components/Footer/view';
 
 class HomeView extends View {
     constructor() {
@@ -8,7 +9,7 @@ class HomeView extends View {
     }
 
     public render(): string {
-        return `<div class='home'>home iopta${Thanks()}</div>`
+        return `<div class='page'>${Thanks()}${Footer()}</div>`
     }
 }
 
