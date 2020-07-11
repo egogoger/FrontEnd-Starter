@@ -1,6 +1,6 @@
 import Controller from '../../core/controller';
 import View from 'Core/view';
-import HomeView from "Pages/Home/view";
+import HomeView from 'Pages/Home/view';
 
 class HomePage extends Controller {
     view: View;
