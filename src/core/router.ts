@@ -14,13 +14,11 @@ class Router {
     }
 
     route(): void {
-        window.addEventListener('popstate', () => {
-            this.redirect(window.location.pathname);
-        });
-        this.redirect('/');
+        window.addEventListener('popstate', this.redirect.bind(this));
+        this.redirect();
     }
 
-    private redirect(path: string): void {
+    private redirect(path: string = window.location.pathname): void {
         if (this.current) {
             this.current.hideSelf();
         }
