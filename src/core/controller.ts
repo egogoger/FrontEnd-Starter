@@ -1,5 +1,6 @@
 import {removeAllChildrenFrom} from 'Utils/htmlHelpers';
 import View from 'Core/view';
+import Component from 'Core/component';
 
 type eListener = EventListenerOrEventListenerObject;
 
@@ -7,6 +8,7 @@ class Controller {
     listeners: Map<string, eListener>;
     base: Element;
     view: View;
+    components: Map<string, Component>;
 
     constructor(base: Element) {
         this.listeners = new Map<string, eListener>();
@@ -16,7 +18,7 @@ class Controller {
     public showSelf(): void {
         removeAllChildrenFrom(this.base);
         this.base.insertAdjacentHTML('afterbegin', this.view.render());
-        this.addAllListeners();
+        this.controllerDidMount();
     }
 
     public hideSelf(): void {
@@ -24,14 +26,20 @@ class Controller {
         removeAllChildrenFrom(this.base);
     }
 
-    protected addAllListeners(): void {}
+    controllerDidMount(): void {
+        for (const comp of this.components.values()) {
+            comp.didRender();
+        }
+    }
 
     protected addListener(node: Element, type: string, handler: eListener): void {
+        node.addEventListener(type, handler);
         const key = this.createKey(node, type, handler);
         this.listeners.set(key, handler);
     }
 
     protected removeListener(node: Element, type: string, handler: eListener): void {
+        node.removeEventListener(type, handler);
         const key = this.createKey(node, type, handler);
         this.listeners.delete(key);
     }
