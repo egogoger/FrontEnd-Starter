@@ -1,6 +1,6 @@
 import {removeAllChildrenFrom} from 'Utils/htmlHelpers';
 import View from 'Core/view';
-import Component from 'Core/component';
+import {IComponent} from 'Interfaces';
 
 type eListener = EventListenerOrEventListenerObject;
 
@@ -8,7 +8,7 @@ class Controller {
     listeners: Map<string, eListener>;
     base: Element;
     view: View;
-    components: Map<string, Component>;
+    components: Map<string, IComponent>;
 
     constructor(base: Element) {
         this.listeners = new Map<string, eListener>();

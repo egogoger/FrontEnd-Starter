@@ -3,6 +3,7 @@ import DemoView from './view';
 import PersonInput from 'Components/PersonInput/controller';
 import {Person} from 'Interfaces';
 import PersonModel from 'Models/PersonModel';
+import PersonTable from 'Components/PersonTable/controller';
 
 class DemoPage extends Controller {
     constructor(base: Element) {
@@ -10,6 +11,7 @@ class DemoPage extends Controller {
         this.view = new DemoView();
         this.components = new Map([
             ['personInput', new PersonInput()],
+            ['personTable', new PersonTable()],
         ]);
     }
 

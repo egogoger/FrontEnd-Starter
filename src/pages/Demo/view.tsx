@@ -2,6 +2,7 @@ import './style.scss';
 import View from 'Core/view';
 import Footer from 'Components/Footer/view';
 import PersonInputRender from 'Components/PersonInput/view';
+import PersonTableRender from 'Components/PersonTable/view';
 
 class DemoView extends View {
     constructor() {
@@ -14,7 +15,7 @@ class DemoView extends View {
     <div class="demo">
         <h1>Demo</h1>
         ${PersonInputRender()}
-<!--        <PersonTable />-->
+        ${PersonTableRender.HTML}
 <!--        <PersonTableButton />-->
     </div>
     ${Footer()}
