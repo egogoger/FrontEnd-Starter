@@ -14,7 +14,3 @@ export type Contribution = {
     message: string,
     link: string,
 }
-
-export interface IComponent {
-    didRender(): void;
-}

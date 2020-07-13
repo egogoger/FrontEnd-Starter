@@ -5,7 +5,7 @@
     background-color: $light-gray;
   }
 
-  &__action {
+  & td:last-child {
     text-align: center;
     cursor: pointer;
     font-weight: 300;

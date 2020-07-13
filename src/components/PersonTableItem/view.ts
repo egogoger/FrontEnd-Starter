@@ -7,7 +7,7 @@ function PersonTableItemRender(person: Person): string {
 <tr class='person-table-item'>
     <td>${person.name}</td>
     <td>${person.surname}</td>
-    <td class='person-table-item__action'>&#215;</td>
+    <td>&#215;</td>
 </tr>`
 }
 
