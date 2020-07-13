@@ -25,14 +25,14 @@ class DemoPage extends Controller {
     private onSubmit(e: Event): void {
         e.preventDefault();
         const form = this.components.get('personInput') as PersonInput;
-        let name = form.view.nameInput.value;
-        let surname = form.view.surnameInput.value;
+        const name = form.view.nameInput.value;
+        const surname = form.view.surnameInput.value;
         if (name.length === 0 || surname.length === 0) {
             return;
         }
         PersonModel.instance.savePerson({name, surname}).then(() => {
-            name = '';
-            surname = '';
+            form.view.clearInputs();
+            form.view.nameInput.focus();
             const personTable = this.components.get('personTable') as PersonTable;
             personTable.showPersons();
         });

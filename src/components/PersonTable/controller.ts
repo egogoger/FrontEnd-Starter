@@ -22,11 +22,7 @@ class PersonTable extends Controller {
     }
 
     public showPersons(): void {
-        PersonModel.instance.loadPersons()
-            .then(ps => this.view.showPersons(ps))
-            .then(() => {
-                // this.addListener(this.dumb.body, 'click', this.onItemClick);
-            });
+        PersonModel.instance.loadPersons().then(ps => this.view.showPersons(ps));
     }
 
     public onItemClick(e: Event): void {

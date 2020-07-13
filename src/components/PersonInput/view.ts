@@ -12,6 +12,11 @@ class PersonInputRender extends View {
         }
     }
 
+    public clearInputs(): void {
+        this.nameInput.value = '';
+        this.surnameInput.value = '';
+    }
+
     public setvDOM(): void {
         this.vDOM.self = document.querySelector('.person-input');
         this.vDOM.nameInput = this.form.querySelector('input[name="name"]');
