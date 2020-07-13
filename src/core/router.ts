@@ -18,7 +18,7 @@ class Router {
         this.redirect();
     }
 
-    private redirect(path: string = window.location.pathname): void {
+    public redirect(path: string = window.location.pathname): void {
         if (this.current) {
             this.current.hideSelf();
         }

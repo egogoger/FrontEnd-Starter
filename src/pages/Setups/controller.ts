@@ -1,9 +1,8 @@
 import Controller from 'Core/controller';
-import View from 'Core/view';
 import SetupsView from './view';
 
 class SetupsPage extends Controller {
-    view: View;
+    view: SetupsView;
 
     constructor(base: Element) {
         super(base);

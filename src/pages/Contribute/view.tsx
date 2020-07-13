@@ -1,17 +1,16 @@
 import './style.scss';
 import View from 'Core/view';
-import Footer from 'Components/Footer/view';
+import Footer from 'Components/Footer/render';
 import Data from 'Static/data';
-import Contribution from 'Components/Contribution/view';
+import Contribution from 'Components/Contribution/render';
 
 class ContributesView extends View {
     constructor() {
         super();
     }
 
-    public render(): string {
-        return `
-<div class='page'>
+    static HTML =
+`<div class='page'>
     <div class='contribute'>
         <h1>Contribute</h1>
         <div class="contribute__ways">
@@ -19,7 +18,10 @@ class ContributesView extends View {
         </div>
     </div>
     ${Footer()}
-</div>`
+</div>`;
+
+    setvDOM(): void {
+        this.vDOM.self = document.querySelector('.contribute');
     }
 }
 

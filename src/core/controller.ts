@@ -1,55 +1,61 @@
 import {removeAllChildrenFrom} from 'Utils/htmlHelpers';
 import View from 'Core/view';
-import SmartComponent from 'Core/smartComponent';
 
 type eListener = EventListenerOrEventListenerObject;
 
-class Controller {
-    listeners: Map<string, eListener>;
-    base: Element;
+abstract class Controller {
     view: View;
-    components: Map<string, SmartComponent>;
+    parent: Element;
+    listeners: Map<string, eListener>;
+    components: Map<string, Controller>;
 
-    constructor(base: Element) {
+    protected constructor(parent?: Element) {
         this.listeners = new Map();
         this.components = new Map();
-        this.base = base;
+        this.parent = parent;
     }
 
     public showSelf(): void {
-        removeAllChildrenFrom(this.base);
-        this.base.insertAdjacentHTML('afterbegin', this.view.render());
+        if (this.parent) {
+            removeAllChildrenFrom(this.parent);
+        }
+        const viewClass = <typeof View>this.view.constructor;
+        this.parent.insertAdjacentHTML('afterbegin', viewClass.HTML);
         this.controllerDidMount();
     }
 
     public hideSelf(): void {
         this.removeAllListeners();
-        removeAllChildrenFrom(this.base);
+        removeAllChildrenFrom(this.parent);
     }
 
-    controllerDidMount(): void {
+    public controllerDidMount(): void {
+        this.view.setvDOM();
         for (const comp of this.components.values()) {
-            comp.didRender();
+            comp.view.setvDOM();
         }
     }
 
     protected addListener(node: Element, type: string, handler: eListener): void {
         node.addEventListener(type, handler);
-        const key = this.createKey(node, type, handler);
+        const key = Controller.createKey(node, type, handler);
         this.listeners.set(key, handler);
     }
 
     protected removeListener(node: Element, type: string, handler: eListener): void {
         node.removeEventListener(type, handler);
-        const key = this.createKey(node, type, handler);
+        const key = Controller.createKey(node, type, handler);
         this.listeners.delete(key);
     }
 
     protected removeAllListeners(): void {
+        // TODO: Basically we rely here on garbage collector
+        //  to remove all the listeners
+        //  Maybe use the view's vDOM to remove everything
         this.listeners.clear();
     }
 
-    private createKey(node: Element, type: string, handler: eListener) {
+    static createKey(node: Element, type: string, handler: eListener): string {
         return node.className + type + handler.toString();
     }
 }

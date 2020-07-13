@@ -1,9 +1,8 @@
 import Controller from 'Core/controller';
-import View from 'Core/view';
 import ContributesView from './view';
 
 class ContributePage extends Controller {
-    view: View;
+    view: ContributesView;
 
     constructor(base: Element) {
         super(base);

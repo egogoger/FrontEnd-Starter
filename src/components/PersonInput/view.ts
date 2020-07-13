@@ -1,31 +1,21 @@
 import './style.scss';
 
-import DumbComponent from 'Core/dumbComponent';
+import View from 'Core/view';
 
-class PersonInputRender extends DumbComponent {
+class PersonInputRender extends View {
     constructor() {
         super();
         this.vDOM = {
-            form: null,
+            ...this.vDOM,
             nameInput: null,
             surnameInput: null,
         }
     }
 
     public setvDOM(): void {
-        if (!this.vDOM.form) {
-            this.vDOM.form = document.querySelector('.person-input');
-        }
-        if (!this.vDOM.nameInput) {
-            this.vDOM.nameInput = this.vDOM.form.querySelector('input[name="name"]');
-        }
-        if (!this.vDOM.surnameInput) {
-            this.vDOM.surnameInput = this.vDOM.form.querySelector('input[name="surname"]');
-        }
-    }
-
-    render(): string {
-        return PersonInputRender.HTML;
+        this.vDOM.self = document.querySelector('.person-input');
+        this.vDOM.nameInput = this.form.querySelector('input[name="name"]');
+        this.vDOM.surnameInput = this.form.querySelector('input[name="surname"]');
     }
 
     static get HTML(): string {
@@ -46,7 +36,7 @@ class PersonInputRender extends DumbComponent {
     }
 
     get form(): HTMLFormElement {
-        return this.vDOM.form as HTMLFormElement;
+        return this.vDOM.self as HTMLFormElement;
     }
 
     get nameInput(): HTMLInputElement {

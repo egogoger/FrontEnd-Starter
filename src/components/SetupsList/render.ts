@@ -1,7 +1,7 @@
 import './style.scss';
 
 import {Setup} from 'Interfaces';
-import SetupsListItem from 'Components/SetupListItem/view';
+import SetupsListItem from 'Components/SetupListItem/render';
 
 function SetupsList(setups: Setup[]): string {
     return `

@@ -1,16 +1,12 @@
-import SmartComponent from 'Core/smartComponent';
-import PersonInputRender from 'Components/PersonInput/dumb';
+import PersonInputRender from 'Components/PersonInput/view';
+import Controller from 'Core/controller';
 
-class PersonInput extends SmartComponent {
-    dumb: PersonInputRender;
+class PersonInput extends Controller {
+    view: PersonInputRender;
 
     constructor() {
         super();
-        this.dumb = new PersonInputRender();
-    }
-
-    didRender(): void {
-        super.didRender();
+        this.view = new PersonInputRender();
     }
 }
 
