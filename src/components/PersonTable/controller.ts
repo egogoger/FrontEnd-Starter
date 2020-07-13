@@ -13,6 +13,7 @@ class PersonTable extends Controller {
     public controllerDidMount(): void {
         super.controllerDidMount();
         this.showLoading();
+        this.addListener(this.view.self, 'click', this.onItemClick.bind(this));
         setTimeout(this.showPersons.bind(this), 1000);
     }
 
@@ -28,9 +29,19 @@ class PersonTable extends Controller {
             });
     }
 
-    // public onItemClick(e: Event): void {
-    //
-    // }
+    public onItemClick(e: Event): void {
+        const t = e.target as Element;
+        if (!t.matches('.person-table-item__action')) {
+            return;
+        }
+        const inputs = t.closest('.person-table-item').querySelectorAll('td');
+
+        const person = {
+            name: inputs[0].innerText,
+            surname: inputs[1].innerText,
+        };
+        PersonModel.instance.deletePerson(person).then(() => this.showPersons());
+    }
 }
 
 export default PersonTable;
