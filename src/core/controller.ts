@@ -30,9 +30,9 @@ abstract class Controller {
     }
 
     public controllerDidMount(): void {
-        this.view.setvDOM();
+        this.view.didRender();
         for (const comp of this.components.values()) {
-            comp.view.setvDOM();
+            comp.controllerDidMount();
         }
     }
 

@@ -16,20 +16,19 @@ class PersonTableView extends View {
     }
 
     public showLoading(): void {
-        removeAllChildrenFrom(this.vDOM.body);
-        this.vDOM.body.insertAdjacentHTML('afterbegin',
+        removeAllChildrenFrom(this.self);
+        this.self.insertAdjacentHTML('afterbegin',
             '<tr><th>Loading...</th><th>Loading...</th><th>Loading...</th></tr>');
     }
 
     public async showPersons(persons: Person[]): Promise<void> {
-        removeAllChildrenFrom(this.vDOM.body);
-        this.vDOM.body.insertAdjacentHTML('afterbegin',
+        removeAllChildrenFrom(this.self);
+        this.self.insertAdjacentHTML('afterbegin',
             persons.reduce((output, person) => output + PersonTableItemRender(person), ''));
     }
 
-    static get HTML(): string {
-        return `
-<table class='person-table'>
+    static HTML =
+`<table class='person-table'>
     <thead>
         <tr>
             <th>Name</th>
@@ -38,8 +37,7 @@ class PersonTableView extends View {
         </tr>
     </thead>
     <tbody></tbody>
-</table>`
-    }
+</table>`;
 
     public setvDOM(): void {
         this.vDOM.self = document.querySelector('.person-table tbody');
