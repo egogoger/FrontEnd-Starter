@@ -3,6 +3,7 @@ import View from 'Core/view';
 import Footer from 'Components/Footer/render';
 import PersonInputRender from 'Components/PersonInput/view';
 import PersonTableView from 'Components/PersonTable/view';
+import PersonTableButton from 'Components/PersonTableButton/view';
 
 class DemoView extends View {
     constructor() {
@@ -19,7 +20,7 @@ class DemoView extends View {
         <h1>Demo</h1>
         ${PersonInputRender.HTML}
         ${PersonTableView.HTML}
-<!--        <PersonTableButton />-->
+        ${PersonTableButton.HTML}
     </div>
     ${Footer()}
 </div>`;
