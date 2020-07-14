@@ -1,6 +1,6 @@
 import './style.scss';
 
-import View from 'Core/view';
+import View from 'src/core/view';
 
 class PersonInputRender extends View {
     constructor() {

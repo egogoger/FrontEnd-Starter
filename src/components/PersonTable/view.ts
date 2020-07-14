@@ -3,7 +3,7 @@ import './style.scss';
 import PersonTableItemRender from 'Components/PersonTableItem/render';
 import {Person} from 'Interfaces';
 import {removeAllChildrenFrom} from 'src/utils/htmlHelpers';
-import View from 'Core/view';
+import View from 'src/core/view';
 
 class PersonTableView extends View {
     constructor() {
