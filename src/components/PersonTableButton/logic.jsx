@@ -3,25 +3,21 @@ import { connect } from 'react-redux';
 
 import PersonTableButton from './render';
 import { clearPersons } from 'Actions/Person';
-import PersonModel from 'Models/PersonModel';
+import PersonModel from 'src/models/PersonModel';
 
-type IProps = {
-    clearPersons(): void,
-}
-
-class PersonTableItem extends React.Component<IProps> {
-    constructor(props:IProps) {
+class PersonTableItem extends React.Component {
+    constructor(props) {
         super(props);
 
         this.handleOnClick = this.handleOnClick.bind(this);
     }
 
-    private handleOnClick() {
+    handleOnClick() {
         this.props.clearPersons();
         PersonModel.instance.savePersons();
     }
 
-    render():JSX.Element {
+    render() {
         return (
             <PersonTableButton onClick={this.handleOnClick}/>
         );

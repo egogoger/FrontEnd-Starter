@@ -3,7 +3,7 @@ import './style.scss';
 
 import { Link } from 'react-router-dom';
 
-function Footer():JSX.Element {
+function Footer() {
     return (
         <div className='footer'>
             <div className='footer__list'>

@@ -1,13 +1,7 @@
 import * as React from 'react';
 import './style.scss';
 
-import { Person } from 'Interfaces';
-
-type IProps = Person & {
-    onClick(): void,
-}
-
-function PersonTableItemRender(props: IProps):JSX.Element {
+function PersonTableItemRender(props) {
     return (
         <tr className='person-table-item'>
             <td>{props.name}</td>

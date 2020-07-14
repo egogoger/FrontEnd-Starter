@@ -1,11 +1,7 @@
 import * as React from 'react';
 import './style.scss';
 
-type IProps = {
-    onClick(): void,
-}
-
-function PersonTableButton(props:IProps):JSX.Element {
+function PersonTableButton(props) {
     return (
         <div className='person-table-button'>
             <div className='person-table-button__icon' onClick={props.onClick}>&#215;</div>

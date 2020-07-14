@@ -1,14 +1,7 @@
 import * as React from 'react';
 import './style.scss';
 
-import { Person } from 'Interfaces';
-
-type IProps = Person & {
-    onChange(event: React.ChangeEvent<HTMLInputElement>): void;
-    onSubmit(e: React.ChangeEvent<HTMLFormElement>): void;
-}
-
-function PersonInputRender(props: IProps):JSX.Element {
+function PersonInputRender(props) {
     return (
         <form className='person-input' onSubmit={props.onSubmit}>
             <input

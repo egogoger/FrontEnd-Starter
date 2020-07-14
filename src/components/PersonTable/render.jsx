@@ -1,15 +1,9 @@
 import * as React from 'react';
 import './style.scss';
 
-import PersonTableItem from 'Components/PersonTableItem/logic';
-import { Person } from 'Interfaces';
+import PersonTableItem from 'src/components/PersonTableItem/logic';
 
-type IProps = {
-    loading: boolean,
-    persons: Person[],
-}
-
-function PersonTableRender(props: IProps):JSX.Element {
+function PersonTableRender(props) {
     return (
         <table className='person-table'>
             <thead>

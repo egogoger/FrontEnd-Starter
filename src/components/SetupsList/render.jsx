@@ -1,14 +1,9 @@
 import * as React from 'react';
 import './style.scss';
 
-import SetupsListItem from 'Components/SetupsListItem/render';
-import { Setup } from 'Interfaces';
+import SetupsListItem from 'src/components/SetupsListItem/render';
 
-interface IProps {
-    setups: Setup[]
-}
-
-function SetupsList(props: IProps):JSX.Element {
+function SetupsList(props) {
     return (
         <div className='setups-list'>
             {props.setups.map((item, index) => <SetupsListItem setup={item} index={index + 1} key={item.link}/>)}

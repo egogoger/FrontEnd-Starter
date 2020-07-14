@@ -1,9 +1,7 @@
 import * as React from 'react';
 import './style.scss';
 
-import { Contribution } from 'Interfaces';
-
-function ContributionRender(props:Contribution):JSX.Element {
+function ContributionRender(props) {
     return (
         <div className='contribution'>
             <img className='contribution__icon' src={props.icon} alt={props.title}/>

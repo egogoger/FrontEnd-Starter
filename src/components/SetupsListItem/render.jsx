@@ -1,15 +1,9 @@
 import * as React from 'react';
 import './style.scss';
 
-import { Setup } from 'Interfaces';
-import Data from 'static/data';
+import Data from 'Static/data';
 
-interface IProps {
-    setup: Setup,
-    index: number
-}
-
-function SetupsListItem(props: IProps):JSX.Element {
+function SetupsListItem(props) {
     return (
         <div className='setups-list-item'>
             <h2 className='setups-list-item__header'>Setup {props.index}</h2>

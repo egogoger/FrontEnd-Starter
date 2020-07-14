@@ -1,17 +1,12 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-import { Person } from 'Interfaces';
 import PersonInputRender from './render';
 import { addPerson } from 'Actions/Person';
-import PersonModel from 'Models/PersonModel';
+import PersonModel from 'src/models/PersonModel';
 
-type IProps = {
-    addPerson(person: Person): void,
-}
-
-class PersonInput extends React.Component<IProps, Person> {
-    constructor(props: IProps) {
+class PersonInput extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
             name: '',
@@ -22,12 +17,12 @@ class PersonInput extends React.Component<IProps, Person> {
         this.handleInputChange = this.handleInputChange.bind(this);
     }
 
-    private handleSubmit(e) {
+    handleSubmit(e) {
         e.preventDefault();
         if (this.state.name.length === 0 || this.state.surname.length === 0) {
             return;
         }
-        const person: Person = {
+        const person = {
             name: this.state.name,
             surname: this.state.surname,
         };
@@ -40,7 +35,7 @@ class PersonInput extends React.Component<IProps, Person> {
         });
     }
 
-    private handleInputChange(event) {
+    handleInputChange(event) {
         const {name, value} = event.target;
         this.setState(prevState => ({
             ...prevState,
@@ -48,7 +43,7 @@ class PersonInput extends React.Component<IProps, Person> {
         }));
     }
 
-    render():JSX.Element {
+    render() {
         return (
             <PersonInputRender
                 onSubmit={this.handleSubmit}
