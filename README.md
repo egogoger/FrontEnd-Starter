@@ -69,7 +69,7 @@ You can change the file structure whichever way you want and if you do so, don't
 │   │   └── variables.scss  // Global CSS variables
 │   ├── index.html
 │   ├── main.scss
-│   ├── main.tsx
+│   ├── main.ts
 │   └── server.ts       // Static server
 ├── static/             // Static files
 ├── .babelrc            // Babel config
