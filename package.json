@@ -2,7 +2,7 @@
   "name": "frontend-starter-2020",
   "author": "Egor Bedov",
   "version": "1.0.0",
-  "description": "React Redux SPA Application",
+  "description": "SPA Application on TypeScript",
   "homepage": "https://github.com/EgorBedov/FrontEnd-Starter",
   "private": true,
   "main": "webpack.config.js",
@@ -18,8 +18,6 @@
     "FrontEnd",
     "Setup",
     "Starter",
-    "React",
-    "Redux",
     "Typescript"
   ],
   "license": "MIT",
@@ -27,21 +25,11 @@
     "url": "https://github.com/EgorBedov/FrontEnd-Starter/issues"
   },
   "dependencies": {
-    "node-static": "^0.7.11",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-redux": "^7.2.0",
-    "react-router-dom": "^5.2.0",
-    "redux": "^4.0.5"
+    "node-static": "^0.7.11"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",
     "@babel/preset-env": "^7.10.3",
-    "@babel/preset-react": "^7.10.1",
-    "@types/react": "^16.9.41",
-    "@types/react-dom": "^16.9.8",
-    "@types/react-redux": "^7.1.9",
-    "@types/react-router-dom": "^5.1.5",
     "@typescript-eslint/eslint-plugin": "^3.5.0",
     "@typescript-eslint/parser": "^3.5.0",
     "babel-eslint": "^10.1.0",
@@ -49,11 +37,11 @@
     "css-loader": "^3.6.0",
     "eslint": "^7.3.1",
     "eslint-loader": "^4.0.2",
-    "eslint-plugin-react": "^7.20.3",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
+    "sass": "^1.26.10",
     "sass-loader": "^8.0.2",
     "source-map-loader": "^1.0.0",
     "style-loader": "^1.2.1",

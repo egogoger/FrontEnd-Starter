@@ -5,16 +5,15 @@
     "noImplicitAny": false,
     "module": "commonjs",
     "target": "es6",
-    "jsx": "react",
 
     "baseUrl": ".",
     "paths": {
       "Components/*": ["src/components/*"],
       "Pages/*": ["src/pages/*"],
       "Models/*": ["src/models/*"],
-      "Actions/*": ["src/store/actions/*"],
-      "Reducers/*": ["src/store/reducers/*"],
       "Static/*": ["static/*"],
+      "Core/*": ["src/core/*"],
+      "Utils/*": ["src/utils/*"],
       "Constants": ["src/utils/constants.ts"],
       "Interfaces": ["src/utils/interfaces.ts"]
     }

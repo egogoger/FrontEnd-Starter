@@ -1,12 +1,13 @@
 # FrontEnd Starter 2020
-![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/react?logo=react) ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/redux?logo=redux) ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/dev/typescript?logo=typescript)
-![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/dev/webpack?logo=webpack) ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/dev/eslint?logo=eslint)
+![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/dev/typescript?logo=typescript)
+![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/dev/webpack?logo=webpack) ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/dev/eslint?logo=eslint) ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/dev/sass?logo=sass)
 
 Start your next web application with up-to-date development tools without a struggle of setting them up. Just download it and you're ready to go!
 
 ## Setups
 List of supported setups:
 * React + Redux + Typescript ([branch](/../../tree/React-Redux-TS/))
+* Typescript ([branch](/../../tree/TS/))
 
 Default technological stack:
 * Webpack module bundler
@@ -55,20 +56,21 @@ You can change the file structure whichever way you want and if you do so, don't
 ├── node_modules/
 ├── src
 │   ├── components/     // Create your components here
-│   ├── index.html
-│   ├── main.tsx
+│   ├── core
+│   │   ├── controller      // Base controller aka smart component
+│   │   ├── router          // SPA-router
+│   │   └── view.ts         // Base view aka view component
 │   ├── models/         // Create your models here
 │   ├── pages/          // Create your pages here
-│   ├── server.ts       // Static server
-│   ├── store
-│   │   ├── actions/    // Redux's actions and action creators
-│   │   ├── reducers/   // Redux's reducers
-│   │   └── store.ts    // Redux's store
-│   └── utils
-│       ├── assets.d.ts     // Assets declarations (TS)
-│       ├── constants.ts    // Global constants
-│       ├── interfaces.ts   // Global interfaces
-│       └── variables.scss  // Global CSS variables
+│   ├── utils
+│   │   ├── assets.d.ts     // Assets declarations (TS)
+│   │   ├── constants.ts    // Global constants
+│   │   ├── interfaces.ts   // Global interfaces
+│   │   └── variables.scss  // Global CSS variables
+│   ├── index.html
+│   ├── main.scss
+│   ├── main.ts
+│   └── server.ts       // Static server
 ├── static/             // Static files
 ├── .babelrc            // Babel config
 ├── .eslintignore

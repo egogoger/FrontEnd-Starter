@@ -39,11 +39,11 @@ if [[ "$MODE" == "full" ]]; then
   rm -rf static
   rm -rf src/models
   if [[ "$SED_MODE" == "crazy" ]]; then
-    sed -i '' -e '18,20d;23d' webpack.config.js
-    sed -i '' -e '12,14d;17d' tsconfig.json
+    sed -i '' -e '18,21d' webpack.config.js
+    sed -i '' -e '11,14d' tsconfig.json
   else
-    sed -i '18,20d;23d' webpack.config.js
-    sed -i '12,14d;17d' tsconfig.json
+    sed -i '18,21d' webpack.config.js
+    sed -i '11,14d' tsconfig.json
   fi
 else
   rm -rf static/icons
@@ -58,21 +58,16 @@ echo "..."
 echo '' > src/main.scss
 
 if [[ "$SED_MODE" == "crazy" ]]; then
-  sed -i '' -e '8,11d;17,20d' src/main.tsx
-  sed -i '' -e '5d' src/store/reducers/MainReducer.ts
+  sed -i '' -e '4,7d;12,15d' src/main.ts
 else
-  sed -i '8,11d;17,20d' src/main.tsx
-  sed -i '5d' src/store/reducers/MainReducer.ts
+  sed -i '4,7d;12,15d' src/main.ts
 fi
 
 # Clean Utils
 echo '' > src/utils/constants.ts
+echo '' > src/utils/htmlHelpers.ts
 echo '' > src/utils/interfaces.ts
 echo '' > src/utils/variables.scss
-
-rm src/store/reducers/Person.ts
-rm src/store/actions/Person.ts
-echo "" > src/store/actions/ActionTypes.ts
 
 # Clean README
 echo "" > README.md
