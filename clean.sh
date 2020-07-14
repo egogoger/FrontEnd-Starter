@@ -40,10 +40,8 @@ if [[ "$MODE" == "full" ]]; then
   rm -rf src/models
   if [[ "$SED_MODE" == "crazy" ]]; then
     sed -i '' -e '18,21d' webpack.config.js
-    sed -i '' -e '11,14d' tsconfig.json
   else
     sed -i '18,21d' webpack.config.js
-    sed -i '11,14d' tsconfig.json
   fi
 else
   rm -rf static/icons
