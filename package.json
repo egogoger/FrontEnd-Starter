@@ -25,7 +25,8 @@
     "url": "https://github.com/EgorBedov/FrontEnd-Starter/issues"
   },
   "dependencies": {
-    "node-static": "^0.7.11"
+    "node-static": "^0.7.11",
+    "sass": "^1.26.10"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",
