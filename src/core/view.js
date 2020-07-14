@@ -1,22 +1,22 @@
-abstract class View {
-    protected vDOM: Record<string, Element>;
+class View {
+    vDOM;
 
     // abstract static get would be perfect here
     static HTML = '';
 
     // Ideally constructor should require
     // an ID to find this exact element
-    protected constructor() {
+    constructor() {
         this.vDOM = {
             self: null,
         };
     }
 
-    public didRender(): void {
+    didRender() {
         this.setvDOM();
     }
 
-    abstract setvDOM(): void;
+    setvDOM() {}
 }
 
 export default View;

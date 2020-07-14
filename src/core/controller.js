@@ -1,58 +1,49 @@
 import {removeAllChildrenFrom} from 'Utils/htmlHelpers';
-import View from 'Core/view';
 
-type eListener = EventListenerOrEventListenerObject;
-
-abstract class Controller {
-    view: View;
-    parent: Element;
-    listeners: Map<string, eListener>;
-    components: Map<string, Controller>;
-
-    protected constructor(parent?: Element) {
+class Controller {
+    constructor(parent) {
         this.listeners = new Map();
         this.components = new Map();
         this.parent = parent;
     }
 
-    public showSelf(): void {
+    showSelf() {
         if (this.parent) {
             removeAllChildrenFrom(this.parent);
         }
-        const viewClass = <typeof View>this.view.constructor;
-        this.parent.insertAdjacentHTML('afterbegin', viewClass.HTML);
+        this.parent.insertAdjacentHTML('afterbegin', this.view.constructor.HTML);
         this.controllerDidMount();
     }
 
-    public hideSelf(): void {
+    hideSelf() {
         this.removeAllListeners();
         removeAllChildrenFrom(this.parent);
     }
 
-    public controllerDidMount(): void {
+    controllerDidMount() {
         this.view.didRender();
         for (const comp of this.components.values()) {
             comp.controllerDidMount();
         }
     }
 
-    protected addListener(node: Element, type: string, handler: eListener): void {
+    addListener(node, type, handler) {
         node.addEventListener(type, handler);
         const key = Controller.createKey(node, type, handler);
         this.listeners.set(key, handler);
     }
 
-    protected removeListener(node: Element, type: string, handler: eListener): void {
+    removeListener(node, type, handler) {
         node.removeEventListener(type, handler);
         const key = Controller.createKey(node, type, handler);
         this.listeners.delete(key);
     }
 
-    protected removeAllListeners(): void {
+    removeAllListeners() {
         this.listeners.clear();
     }
 
-    static createKey(node: Element, type: string, handler: eListener): string {
+    static createKey(node, type, handler) {
         return node.className + type + handler.toString();
     }
 }

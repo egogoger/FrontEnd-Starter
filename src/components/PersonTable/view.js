@@ -1,7 +1,6 @@
 import './style.scss';
 
 import PersonTableItemRender from 'Components/PersonTableItem/render';
-import {Person} from 'Interfaces';
 import {removeAllChildrenFrom} from 'Utils/htmlHelpers';
 import View from 'Core/view';
 
@@ -10,18 +9,18 @@ class PersonTableView extends View {
         super();
     }
 
-    public didRender(): void {
+    didRender() {
         super.didRender();
         this.showLoading();
     }
 
-    public showLoading(): void {
+    showLoading() {
         removeAllChildrenFrom(this.self);
         this.self.insertAdjacentHTML('afterbegin',
             '<tr><th>Loading...</th><th>Loading...</th><th>Loading...</th></tr>');
     }
 
-    public async showPersons(persons: Person[]): Promise<void> {
+    async showPersons(persons) {
         removeAllChildrenFrom(this.self);
         this.self.insertAdjacentHTML('afterbegin',
             persons.reduce((output, person) => output + PersonTableItemRender(person), ''));
@@ -39,12 +38,12 @@ class PersonTableView extends View {
     <tbody></tbody>
 </table>`;
 
-    public setvDOM(): void {
+    setvDOM() {
         this.vDOM.self = document.querySelector('.person-table tbody');
     }
 
-    get self(): HTMLTableElement {
-        return this.vDOM.self as HTMLTableElement;
+    get self() {
+        return this.vDOM.self;
     }
 }
 

@@ -4,15 +4,13 @@
     "node": true,
     "es6": true
   },
-  "parser": "@typescript-eslint/parser",
+  "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 2020
   },
   "extends":[
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
+    "eslint:recommended"
   ],
   "rules": {
     "quotes": [
@@ -30,10 +28,6 @@
     "indent": [
       "error",
       4
-    ],
-    "@typescript-eslint/ban-ts-comment": "off"
-  },
-  "plugins": [
-    "@typescript-eslint"
-  ]
+    ]
+  }
 }

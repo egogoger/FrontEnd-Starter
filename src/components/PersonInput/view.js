@@ -12,12 +12,12 @@ class PersonInputRender extends View {
         }
     }
 
-    public clearInputs(): void {
+    clearInputs() {
         this.nameInput.value = '';
         this.surnameInput.value = '';
     }
 
-    public setvDOM(): void {
+    setvDOM() {
         this.vDOM.self = document.querySelector('.person-input');
         this.vDOM.nameInput = this.form.querySelector('input[name="name"]');
         this.vDOM.surnameInput = this.form.querySelector('input[name="surname"]');
@@ -38,16 +38,16 @@ class PersonInputRender extends View {
     <input type='submit' value='Add' />
 </form>`;
 
-    get form(): HTMLFormElement {
-        return this.vDOM.self as HTMLFormElement;
+    get form() {
+        return this.vDOM.self;
     }
 
-    get nameInput(): HTMLInputElement {
-        return this.vDOM.nameInput as HTMLInputElement;
+    get nameInput() {
+        return this.vDOM.nameInput;
     }
 
-    get surnameInput(): HTMLInputElement {
-        return this.vDOM.surnameInput as HTMLInputElement;
+    get surnameInput() {
+        return this.vDOM.surnameInput;
     }
 }
 

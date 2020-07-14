@@ -1,13 +1,12 @@
 import './style.scss';
 
-import {Setup} from 'Interfaces';
 import {CONST} from 'Constants';
 import JSIcon from 'Static/icons/js.svg';
 import TSIcon from 'Static/icons/ts.svg';
 import ReactIcon from 'Static/icons/react.svg';
 import ReduxIcon from 'Static/icons/redux.svg';
 
-function SetupsListItem(setup: Setup, index: number): string {
+function SetupsListItem(setup, index) {
     return `
 <div class='setups-list-item'>
     <h2 class='setups-list-item__header'>Setup ${index}</h2>
@@ -32,7 +31,7 @@ function SetupsListItem(setup: Setup, index: number): string {
     }, '')}
     </ul>
     <a class='setups-list-item__link' href=${setup.link} target='_blank' rel='noopener noreferrer'>Branch &#8594;</a>
-</div>`
+</div>`;
 }
 
 export default SetupsListItem;

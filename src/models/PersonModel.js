@@ -1,13 +1,12 @@
-import {Person} from 'Interfaces';
 import {CONST} from 'Constants';
 
 const personModelSymbol = Symbol('Model for person');
 const personModelEnforcer = Symbol('The only object that can create PersonModel');
 
 class PersonModel {
-    persons: Person[];
+    persons;
 
-    constructor(enforcer: symbol) {
+    constructor(enforcer) {
         if (enforcer !== personModelEnforcer) {
             throw 'Instantiation failed: use PersonsModel.instance instead of new()';
         }
@@ -15,13 +14,13 @@ class PersonModel {
         this.loadPersons();
     }
 
-    static get instance(): PersonModel {
+    static get instance() {
         if (!this[personModelSymbol])
             this[personModelSymbol] = new PersonModel(personModelEnforcer);
         return this[personModelSymbol];
     }
 
-    static set instance(v: PersonModel) {
+    static set instance(v) {
         throw 'Can\'t change constant property!';
     }
 
@@ -29,28 +28,28 @@ class PersonModel {
                     Person
      *************************************/
 
-    public async savePerson(person: Person): Promise<void> {
+    async savePerson(person) {
         this.persons.push(person);
         this.saveAll();
     }
 
-    public async deletePerson(person: Person): Promise<void> {
+    async deletePerson(person) {
         this.persons = this.persons.filter(p => !PersonModel.personsEqual(p, person));
         this.saveAll();
     }
 
-    private saveAll() {
+    saveAll() {
         localStorage.setItem(
             CONST.LOCAL_STORAGE.PERSONS,
             JSON.stringify(this.persons));
     }
 
-    public async deleteAllPersons(): Promise<void> {
+    async deleteAllPersons() {
         this.persons = [];
         this.saveAll();
     }
 
-    public async loadPersons(): Promise<Person[]> {
+    async loadPersons() {
         try {
             const persons = JSON.parse(localStorage.getItem(CONST.LOCAL_STORAGE.PERSONS));
             if (persons === null) {
@@ -64,7 +63,7 @@ class PersonModel {
         }
     }
 
-    static personsEqual(p1: Person, p2: Person): boolean {
+    static personsEqual(p1, p2) {
         return p1.name === p2.name && p1.surname === p2.surname;
     }
 }

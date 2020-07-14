@@ -2,7 +2,7 @@ import PersonInputRender from 'Components/PersonInput/view';
 import Controller from 'Core/controller';
 
 class PersonInput extends Controller {
-    view: PersonInputRender;
+    view;
 
     constructor() {
         super();

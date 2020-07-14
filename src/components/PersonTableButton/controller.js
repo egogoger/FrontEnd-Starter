@@ -2,7 +2,7 @@ import PersonTableButtonView from 'Components/PersonTableButton/view';
 import Controller from 'Core/controller';
 
 class PersonTableButton extends Controller {
-    view: PersonTableButtonView;
+    view;
 
     constructor() {
         super();

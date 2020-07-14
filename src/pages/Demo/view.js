@@ -1,4 +1,5 @@
 import './style.scss';
+
 import View from 'Core/view';
 import Footer from 'Components/Footer/render';
 import PersonInputRender from 'Components/PersonInput/view';
@@ -10,7 +11,7 @@ class DemoView extends View {
         super();
     }
 
-    setvDOM(): void {
+    setvDOM() {
         this.vDOM.self = document.querySelector('.demo');
     }
 

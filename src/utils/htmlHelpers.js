@@ -1,4 +1,4 @@
-export function removeAllChildrenFrom(node: Element): void {
+export function removeAllChildrenFrom(node) {
     while (node.lastChild) {
         node.removeChild(node.lastChild);
     }

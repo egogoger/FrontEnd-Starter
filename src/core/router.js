@@ -1,24 +1,22 @@
-import Controller from 'Core/controller';
-
 class Router {
-    controllers: Map<string, Controller>;
-    current: Controller;
+    controllers;
+    current;
 
     constructor() {
         this.controllers = new Map();
         this.current = null;
     }
 
-    addRoute(path: string, page: Controller): void {
+    addRoute(path, page) {
         this.controllers.set(path, page);
     }
 
-    route(): void {
+    route() {
         window.addEventListener('popstate', this.redirect.bind(this));
         this.redirect();
     }
 
-    public redirect(path: string = window.location.pathname): void {
+    redirect(path = window.location.pathname) {
         if (this.current) {
             this.current.hideSelf();
         }
