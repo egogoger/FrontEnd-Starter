@@ -19,7 +19,7 @@ class SetupsView extends View {
     ${Footer()}
 </div>`;
 
-    setvDOM(): void {
+    setvDOM() {
         this.vDOM.self = document.querySelector('.setups');
     }
 }

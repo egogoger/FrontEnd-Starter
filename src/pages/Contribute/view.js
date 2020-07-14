@@ -1,4 +1,5 @@
 import './style.scss';
+
 import View from 'Core/view';
 import Footer from 'Components/Footer/render';
 import Data from 'static/data';
@@ -20,7 +21,7 @@ class ContributesView extends View {
     ${Footer()}
 </div>`;
 
-    setvDOM(): void {
+    setvDOM() {
         this.vDOM.self = document.querySelector('.contribute');
     }
 }

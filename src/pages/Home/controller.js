@@ -2,9 +2,9 @@ import Controller from 'Core/controller';
 import HomeView from './view';
 
 class HomePage extends Controller {
-    view: HomeView;
+    view;
 
-    constructor(base: Element) {
+    constructor(base) {
         super(base);
         this.view = new HomeView();
     }
