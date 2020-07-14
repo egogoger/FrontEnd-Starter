@@ -5,7 +5,7 @@ import SetupsList from 'Components/SetupsList/render';
 import Footer from 'Components/Footer/render';
 import Data from 'static/data';
 
-function SetupsPage():JSX.Element {
+function SetupsPage() {
     return (
         <div className='page'>
             <div className="setups">

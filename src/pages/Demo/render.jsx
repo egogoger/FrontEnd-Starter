@@ -6,7 +6,7 @@ import PersonInputRender from 'Components/PersonInput/logic';
 import PersonTable from 'Components/PersonTable/logic';
 import PersonTableButton from 'Components/PersonTableButton/logic';
 
-function DemoPage():JSX.Element {
+function DemoPage() {
     return (
         <div className="page">
             <div className="demo">
