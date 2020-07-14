@@ -1,6 +1,10 @@
 import {CONST} from 'Utils/constants';
 import ForkIcon from 'Static/icons/fork.svg';
 import IssueIcon from 'Static/icons/issue.svg';
+import JSIcon from 'Static/icons/js.svg';
+import TSIcon from 'Static/icons/ts.svg';
+import ReactIcon from 'Static/icons/react.svg';
+import ReduxIcon from 'Static/icons/redux.svg';
 
 const Data = {
     Setups: [
@@ -31,6 +35,12 @@ const Data = {
             message: 'Found a bug or error - create an issue dedicated to it'
         }
     ],
+    Icons: new Map([
+        [CONST.TECH.JS, JSIcon],
+        [CONST.TECH.TS, TSIcon],
+        [CONST.TECH.REACT, ReactIcon],
+        [CONST.TECH.REDUX, ReduxIcon],
+    ]),
 };
 
 export default Data;
