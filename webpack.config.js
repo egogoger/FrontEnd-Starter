@@ -18,8 +18,6 @@ module.exports = {
             Components: path.resolve(__dirname, 'src/components/'),
             Pages: path.resolve(__dirname, 'src/pages/'),
             Models: path.resolve(__dirname, 'src/models/'),
-            Actions: path.resolve(__dirname, 'src/store/actions/'),
-            Reducers: path.resolve(__dirname, 'src/store/reducers/'),
             Static: path.resolve(__dirname, 'static/'),
             Core: path.resolve(__dirname, 'src/core/'),
             Utils: path.resolve(__dirname, 'src/utils/'),
