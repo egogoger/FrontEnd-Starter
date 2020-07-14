@@ -3,10 +3,7 @@ import './style.scss';
 
 import { Setup } from 'Interfaces';
 import { CONST } from 'Constants';
-import JSIcon from 'Static/icons/js.svg';
-import TSIcon from 'Static/icons/ts.svg';
-import ReactIcon from 'Static/icons/react.svg';
-import ReduxIcon from 'Static/icons/redux.svg';
+import Data from 'Static/data';
 
 interface IProps {
     setup: Setup,
@@ -19,23 +16,8 @@ function SetupsListItem(props: IProps):JSX.Element {
             <h2 className='setups-list-item__header'>Setup {props.index}</h2>
             <ul className='setups-list-item__stack'>
                 {props.setup.stack.map(tech => {
-                    let icon = null;
-                    switch (tech) {
-                    case CONST.TECH.JS:
-                        icon = JSIcon;
-                        break;
-                    case CONST.TECH.TS:
-                        icon = TSIcon;
-                        break;
-                    case CONST.TECH.REACT:
-                        icon = ReactIcon;
-                        break;
-                    case CONST.TECH.REDUX:
-                        icon = ReduxIcon;
-                        break;
-                    }
                     return <li key={tech}>
-                        <img src={icon} alt={tech}/>
+                        <img src={Data.Icons.get(tech)} alt={tech}/>
                         {tech}
                     </li>;
                 })}
