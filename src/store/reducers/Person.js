@@ -1,11 +1,8 @@
 import * as types from 'Actions/ActionTypes';
-import { Person } from 'Interfaces';
-import { IPersonAction } from 'Actions/Person';
 
-type StateType = Person[];
-const initialState: StateType = [];
+const initialState = [];
 
-function personsReducer(state: StateType = initialState, action: IPersonAction): StateType {
+function personsReducer(state = initialState, action) {
     let newState = [...state];
 
     switch (action.type) {
