@@ -1,6 +1,4 @@
-# FrontEnd Starter 2020 (Typescript)
-![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/dev/typescript?logo=typescript)
-
+# FrontEnd Starter 2020 (Javascript)
 ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/dev/webpack?logo=webpack) ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/dev/eslint?logo=eslint) ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/dev/sass?logo=sass)
 
 Start your next web application with up-to-date development tools without a struggle of setting them up. Just download it and you're ready to go!
@@ -9,6 +7,7 @@ Start your next web application with up-to-date development tools without a stru
 List of supported setups:
 * React + Redux + Typescript ([branch](/../../tree/React-Redux-TS/))
 * Typescript ([branch](/../../tree/TS/))
+* Javascript ([branch](/../../tree/JS/))
 
 Default technological stack:
 * Webpack module bundler
@@ -52,7 +51,7 @@ clean.sh [-ah]
 > Use -a option to completely delete components, pages, models and static folders
 
 ## File structure
-You can change the file structure whichever way you want and if you do so, don't forget to change aliases paths in both [Typescript config](../blob/TS/tsconfig.json) and [Webpack config](../blob/TS/webpack.config.json).
+You can change the file structure whichever way you want and if you do so, don't forget to change aliases paths in [Webpack config](../blob/JS/webpack.config.json).
 ```bash
 ├── dist/               // Auto generated output files
 ├── node_modules/
@@ -61,18 +60,17 @@ You can change the file structure whichever way you want and if you do so, don't
 │   ├── core
 │   │   ├── controller      // Base controller aka smart component
 │   │   ├── router          // SPA-router
-│   │   └── view.ts         // Base view aka view component
+│   │   └── view.js         // Base view aka view component
 │   ├── models/         // Create your models here
 │   ├── pages/          // Create your pages here
 │   ├── utils
-│   │   ├── assets.d.ts     // Assets declarations (TS)
-│   │   ├── constants.ts    // Global constants
-│   │   ├── interfaces.ts   // Global interfaces
+│   │   ├── constants.js    // Global constants
+│   │   ├── interfaces.js   // Global interfaces
 │   │   └── variables.scss  // Global CSS variables
 │   ├── index.html
 │   ├── main.scss
-│   ├── main.ts
-│   └── server.ts
+│   ├── main.js
+│   └── server.js
 ├── static/             // Static files
 ├── .babelrc            // Babel config
 ├── .eslintignore
@@ -80,7 +78,6 @@ You can change the file structure whichever way you want and if you do so, don't
 ├── .gitignore
 ├── clean.sh            // Script to delete old files
 ├── package.json
-├── tsconfig.json       // Typescript config
 └── webpack.config.js   // Webpack config
 ```
 
