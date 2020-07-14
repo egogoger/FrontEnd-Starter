@@ -1,5 +1,6 @@
-# FrontEnd Starter 2020
+# FrontEnd Starter 2020 (Typescript)
 ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/dev/typescript?logo=typescript)
+
 ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/dev/webpack?logo=webpack) ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/dev/eslint?logo=eslint) ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/dev/sass?logo=sass)
 
 Start your next web application with up-to-date development tools without a struggle of setting them up. Just download it and you're ready to go!
@@ -13,6 +14,7 @@ Default technological stack:
 * Webpack module bundler
 * ESLint linter
 * Babel transpiler
+* Sass CSS preprocessor
 
 ## Usage
 #### Manage repo
@@ -50,7 +52,7 @@ clean.sh [-ah]
 > Use -a option to completely delete components, pages, models and static folders
 
 ## File structure
-You can change the file structure whichever way you want and if you do so, don't forget to change aliases paths in both [Typescript config](../blob/React-Redux-TS/tsconfig.json) and [Webpack config](../blob/React-Redux-TS/webpack.config.json).
+You can change the file structure whichever way you want and if you do so, don't forget to change aliases paths in both [Typescript config](../blob/TS/tsconfig.json) and [Webpack config](../blob/TS/webpack.config.json).
 ```bash
 ├── dist/               // Auto generated output files
 ├── node_modules/
@@ -70,7 +72,7 @@ You can change the file structure whichever way you want and if you do so, don't
 │   ├── index.html
 │   ├── main.scss
 │   ├── main.ts
-│   └── server.ts       // Static server
+│   └── server.ts
 ├── static/             // Static files
 ├── .babelrc            // Babel config
 ├── .eslintignore
