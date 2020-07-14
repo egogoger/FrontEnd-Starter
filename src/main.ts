@@ -6,8 +6,7 @@ import SetupsPage from 'Pages/Setups/controller';
 import ContributePage from 'Pages/Contribute/controller';
 import DemoPage from 'Pages/Demo/controller';
 
-const base = document.querySelector(
-    '#application');
+const base = document.querySelector('#application');
 
 const router = new Router();
 router.addRoute('/', new HomePage(base));
