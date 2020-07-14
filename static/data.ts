@@ -8,6 +8,14 @@ const Data = {
             stack: [CONST.TECH.REACT, CONST.TECH.REDUX, CONST.TECH.TS],
             link: 'https://github.com/EgorBedov/FrontEnd-Starter/tree/React-Redux-TS'
         },
+        {
+            stack: [CONST.TECH.TS],
+            link: 'https://github.com/EgorBedov/FrontEnd-Starter/tree/TS'
+        },
+        {
+            stack: [CONST.TECH.JS],
+            link: 'https://github.com/EgorBedov/FrontEnd-Starter/tree/JS'
+        },
     ],
     Contributions: [
         {
