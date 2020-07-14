@@ -1,6 +1,6 @@
 import Controller from 'Core/controller';
 import DemoView from './view';
-import PersonInput from 'Components/PersonInput/smart';
+import PersonInput from 'Components/PersonInput/controller';
 import PersonModel from 'Models/PersonModel';
 import PersonTable from 'Components/PersonTable/controller';
 import PersonTableButton from 'Components/PersonTableButton/controller';

@@ -49,9 +49,6 @@ abstract class Controller {
     }
 
     protected removeAllListeners(): void {
-        // TODO: Basically we rely here on garbage collector
-        //  to remove all the listeners
-        //  Maybe use the view's vDOM to remove everything
         this.listeners.clear();
     }
 

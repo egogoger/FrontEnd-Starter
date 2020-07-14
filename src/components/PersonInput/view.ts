@@ -23,8 +23,7 @@ class PersonInputRender extends View {
         this.vDOM.surnameInput = this.form.querySelector('input[name="surname"]');
     }
 
-    static get HTML(): string {
-        return `
+    static HTML = `
 <form class='person-input'>
     <input
         name='name'
@@ -37,8 +36,7 @@ class PersonInputRender extends View {
         placeholder='Surname'
     />
     <input type='submit' value='Add' />
-</form>`
-    }
+</form>`;
 
     get form(): HTMLFormElement {
         return this.vDOM.self as HTMLFormElement;

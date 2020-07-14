@@ -1,7 +1,8 @@
 import './style.scss';
 
 function Footer(): string {
-    return `<div class='footer'>
+    return `
+<div class='footer'>
     <div class='footer__list'>
         <a href='/' class='footer__link'>Home</a>
         <a href='/setups' class='footer__link'>Setups</a>
