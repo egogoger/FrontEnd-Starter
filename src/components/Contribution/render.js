@@ -1,8 +1,6 @@
 import './style.scss';
 
-import {Contribution} from 'Interfaces';
-
-function Contribution(c: Contribution): string {
+function Contribution(c) {
     return `
 <div class='contribution'>
     <img class='contribution__icon' src=${c.icon} alt=${c.title}/>
@@ -10,7 +8,7 @@ function Contribution(c: Contribution): string {
         <h1>${c.title}</h1>
     </a>
     <div class='contribution__message'>${c.message}</div>
-</div>`
+</div>`;
 }
 
 export default Contribution;

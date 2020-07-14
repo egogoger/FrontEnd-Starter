@@ -1,6 +1,6 @@
 import './style.scss';
 
-function Footer(): string {
+function Footer() {
     return `
 <div class='footer'>
     <div class='footer__list'>
@@ -14,7 +14,7 @@ function Footer(): string {
         <a href='/demo' class='footer__link'>Demo</a>
         <a href='/contribute' class='footer__link'>Contribute</a>
     </div>
-</div>`
+</div>`;
 }
 
 export default Footer;

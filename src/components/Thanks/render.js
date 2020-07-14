@@ -1,7 +1,8 @@
 import './style.scss';
 
-function Thanks(): string {
-    return `<div class='thanks'>
+function Thanks() {
+    return `
+<div class='thanks'>
     <div class="thanks__message">
         <div class='thanks__message_first'>Thanks for using</div>
         <div class='thanks__message_second'>FrontEnd Starter 2020</div>

@@ -1,32 +1,32 @@
-import PersonTableView from 'Components/PersonTable/view';
+import PersonTableView from 'src/components/PersonTable/view';
 import PersonModel from 'src/models/PersonModel';
 import Controller from 'src/core/controller';
 
 class PersonTable extends Controller {
-    view: PersonTableView;
+    view;
 
     constructor() {
         super();
         this.view = new PersonTableView();
     }
 
-    public controllerDidMount(): void {
+    controllerDidMount() {
         super.controllerDidMount();
         this.showLoading();
         this.addListener(this.view.self, 'click', this.onItemClick.bind(this));
         setTimeout(this.showPersons.bind(this), 1000);
     }
 
-    public showLoading(): void {
+    showLoading() {
         this.view.showLoading();
     }
 
-    public showPersons(): void {
+    showPersons() {
         PersonModel.instance.loadPersons().then(ps => this.view.showPersons(ps));
     }
 
-    public onItemClick(e: Event): void {
-        const t = e.target as Element;
+    onItemClick(e) {
+        const t = e.target;
         if (!t.matches('.person-table-item__action')) {
             return;
         }
