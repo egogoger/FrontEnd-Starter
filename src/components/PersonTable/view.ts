@@ -2,7 +2,7 @@ import './style.scss';
 
 import PersonTableItemRender from 'Components/PersonTableItem/render';
 import {Person} from 'Interfaces';
-import {removeAllChildrenFrom} from 'Utils/htmlHelpers';
+import {removeAllChildrenFrom} from 'src/utils/htmlHelpers';
 import View from 'Core/view';
 
 class PersonTableView extends View {

@@ -65,7 +65,6 @@ You can change the file structure whichever way you want and if you do so, don't
 │   ├── pages/          // Create your pages here
 │   ├── utils
 │   │   ├── constants.js    // Global constants
-│   │   ├── interfaces.js   // Global interfaces
 │   │   └── variables.scss  // Global CSS variables
 │   ├── index.html
 │   ├── main.scss

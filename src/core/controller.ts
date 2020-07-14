@@ -1,4 +1,4 @@
-import {removeAllChildrenFrom} from 'Utils/htmlHelpers';
+import {removeAllChildrenFrom} from 'src/utils/htmlHelpers';
 import View from 'Core/view';
 
 type eListener = EventListenerOrEventListenerObject;
