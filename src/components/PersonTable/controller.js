@@ -1,6 +1,6 @@
-import PersonTableView from 'src/components/PersonTable/view';
-import PersonModel from 'src/models/PersonModel';
-import Controller from 'src/core/controller';
+import PersonTableView from 'Components/PersonTable/view';
+import PersonModel from 'Models/PersonModel';
+import Controller from 'Core/controller';
 
 class PersonTable extends Controller {
     view;

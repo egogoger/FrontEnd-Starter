@@ -2,7 +2,7 @@ import './style.scss';
 
 import View from 'Core/view';
 import Footer from 'Components/Footer/render';
-import Data from 'static/data';
+import Data from 'Static/data';
 import Contribution from 'Components/Contribution/render';
 
 class ContributesView extends View {

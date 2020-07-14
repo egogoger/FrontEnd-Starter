@@ -1,11 +1,6 @@
-import {removeAllChildrenFrom} from 'src/utils/htmlHelpers';
+import {removeAllChildrenFrom} from 'Utils/htmlHelpers';
 
 class Controller {
-    view;
-    parent;
-    listeners;
-    components;
-
     constructor(parent) {
         this.listeners = new Map();
         this.components = new Map();

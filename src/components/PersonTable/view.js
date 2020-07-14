@@ -1,8 +1,8 @@
 import './style.scss';
 
-import PersonTableItemRender from 'src/components/PersonTableItem/render';
-import {removeAllChildrenFrom} from 'src/utils/htmlHelpers';
-import View from 'src/core/view';
+import PersonTableItemRender from 'Components/PersonTableItem/render';
+import {removeAllChildrenFrom} from 'Utils/htmlHelpers';
+import View from 'Core/view';
 
 class PersonTableView extends View {
     constructor() {

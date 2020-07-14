@@ -1,5 +1,5 @@
-import PersonInputRender from 'src/components/PersonInput/view';
-import Controller from 'src/core/controller';
+import PersonInputRender from 'Components/PersonInput/view';
+import Controller from 'Core/controller';
 
 class PersonInput extends Controller {
     view;
