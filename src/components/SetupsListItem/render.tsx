@@ -2,7 +2,7 @@ import * as React from 'react';
 import './style.scss';
 
 import { Setup } from 'Interfaces';
-import Data from 'Static/data';
+import Data from 'static/data';
 
 interface IProps {
     setup: Setup,

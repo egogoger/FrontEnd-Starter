@@ -3,7 +3,7 @@ import './style.scss';
 
 import SetupsList from 'Components/SetupsList/render';
 import Footer from 'Components/Footer/render';
-import Data from 'Static/data';
+import Data from 'static/data';
 
 function SetupsPage():JSX.Element {
     return (
