@@ -32,10 +32,7 @@ class PersonInput extends React.Component<IProps, Person> {
             surname: this.state.surname,
         };
         this.props.addPerson(person);
-        Promise.all([
-            PersonModel.instance.savePersons(),
-            // TODO: Show loading
-        ]).then(() => {
+        PersonModel.instance.savePersons().then(() => {
             this.setState({
                 name: '',
                 surname: '',

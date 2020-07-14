@@ -7,5 +7,6 @@ export const CONST = {
         JS: 'Javascript',
         REACT: 'React',
         REDUX: 'Redux',
-    }
+    },
+    BASE_SELECTOR: '#application'
 };

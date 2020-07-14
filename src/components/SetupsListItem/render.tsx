@@ -19,28 +19,25 @@ function SetupsListItem(props: IProps):JSX.Element {
             <h2 className='setups-list-item__header'>Setup {props.index}</h2>
             <ul className='setups-list-item__stack'>
                 {props.setup.stack.map(tech => {
+                    let icon = null;
                     switch (tech) {
                     case CONST.TECH.JS:
-                        return <li key={tech}>
-                            <img src={JSIcon} alt={tech}/>
-                            {tech}
-                        </li>;
+                        icon = JSIcon;
+                        break;
                     case CONST.TECH.TS:
-                        return <li key={tech}>
-                            <img src={TSIcon} alt={tech}/>
-                            {tech}
-                        </li>;
+                        icon = TSIcon;
+                        break;
                     case CONST.TECH.REACT:
-                        return <li key={tech}>
-                            <img src={ReactIcon} alt={tech}/>
-                            {tech}
-                        </li>;
+                        icon = ReactIcon;
+                        break;
                     case CONST.TECH.REDUX:
-                        return <li key={tech}>
-                            <img src={ReduxIcon} alt={tech}/>
-                            {tech}
-                        </li>;
+                        icon = ReduxIcon;
+                        break;
                     }
+                    return <li key={tech}>
+                        <img src={icon} alt={tech}/>
+                        {tech}
+                    </li>;
                 })}
             </ul>
             <a className='setups-list-item__link' href={props.setup.link} target='_blank' rel='noopener noreferrer'>Branch &#8594;</a>

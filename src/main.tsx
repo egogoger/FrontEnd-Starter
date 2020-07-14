@@ -9,6 +9,7 @@ import HomePage from 'Pages/Home/render';
 import DemoPage from 'Pages/Demo/render';
 import ContributionsPage from 'Pages/Contribute/render';
 import SetupsPage from 'Pages/Setups/render';
+import {CONST} from 'Constants';
 
 render(
     <Provider store={store}>
@@ -21,5 +22,5 @@ render(
             </Switch>
         </BrowserRouter>
     </Provider>,
-    document.querySelector('#application')
+    document.querySelector(CONST.BASE_SELECTOR)
 );

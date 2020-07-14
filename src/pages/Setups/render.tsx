@@ -3,20 +3,14 @@ import './style.scss';
 
 import SetupsList from 'Components/SetupsList/render';
 import Footer from 'Components/Footer/render';
-import { CONST } from 'Constants';
+import Data from 'Static/data';
 
 function SetupsPage():JSX.Element {
     return (
         <div className='page'>
             <div className="setups">
                 <h1>Setups</h1>
-                <SetupsList
-                    setups={[
-                        {
-                            stack: [CONST.TECH.REACT, CONST.TECH.REDUX, CONST.TECH.TS],
-                            link: 'https://github.com/EgorBedov/FrontEnd-Starter/tree/React-Redux-TS',
-                        },
-                    ]}/>
+                <SetupsList setups={Data.Setups}/>
             </div>
             <Footer />
         </div>

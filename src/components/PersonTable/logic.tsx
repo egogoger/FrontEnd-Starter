@@ -19,7 +19,6 @@ class PersonTable extends React.Component<IProps, IState> {
         super(props);
         this.getPersons = this.getPersons.bind(this);
 
-        // Redirecting to this page for the second time runs constructor again hence shows loading
         if (props.persons.length === 0) {
             this.state = {
                 loading: true,

@@ -2,6 +2,7 @@ import {Person} from 'Interfaces';
 import {CONST} from 'Constants';
 import store from '../store/store';
 
+// SINGLETON
 const personModelSymbol = Symbol('Model for person');
 const personModelEnforcer = Symbol('The only object that can create PersonModel');
 
