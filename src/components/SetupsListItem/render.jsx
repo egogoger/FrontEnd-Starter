@@ -1,4 +1,5 @@
 import * as React from 'react';
+import propTypes from 'prop-types';
 import './style.scss';
 
 import Data from 'Static/data';
@@ -19,5 +20,10 @@ function SetupsListItem(props) {
         </div>
     )
 }
+
+SetupsListItem.propTypes = {
+    index: propTypes.number.isRequired,
+    setup: propTypes.object.isRequired,
+};
 
 export default SetupsListItem;

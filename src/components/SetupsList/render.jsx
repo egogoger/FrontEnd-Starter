@@ -1,7 +1,8 @@
 import * as React from 'react';
+import propTypes from 'prop-types';
 import './style.scss';
 
-import SetupsListItem from 'src/components/SetupsListItem/render';
+import SetupsListItem from 'Components/SetupsListItem/render';
 
 function SetupsList(props) {
     return (
@@ -10,5 +11,9 @@ function SetupsList(props) {
         </div>
     )
 }
+
+SetupsList.propTypes = {
+    setups: propTypes.array.isRequired,
+};
 
 export default SetupsList;

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import propTypes from 'prop-types';
 import './style.scss';
 
 function ContributionRender(props) {
@@ -12,5 +13,12 @@ function ContributionRender(props) {
         </div>
     );
 }
+
+ContributionRender.propTypes = {
+    icon    :propTypes.string.isRequired,
+    title   :propTypes.string.isRequired,
+    link    :propTypes.string.isRequired,
+    message :propTypes.string.isRequired,
+};
 
 export default ContributionRender;

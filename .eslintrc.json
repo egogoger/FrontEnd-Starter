@@ -37,6 +37,7 @@
     }
   },
   "plugins": [
-    "react"
+    "react",
+    "eslint-plugin-react"
   ]
 }

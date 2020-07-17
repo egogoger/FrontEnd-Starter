@@ -1,4 +1,5 @@
 import * as React from 'react';
+import propTypes from 'prop-types';
 import './style.scss';
 
 function PersonTableButton(props) {
@@ -9,5 +10,9 @@ function PersonTableButton(props) {
         </div>
     );
 }
+
+PersonTableButton.propTypes = {
+    onClick: propTypes.func.isRequired,
+};
 
 export default PersonTableButton;

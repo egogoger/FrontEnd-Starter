@@ -1,7 +1,8 @@
 import * as React from 'react';
+import propTypes from 'prop-types';
 import './style.scss';
 
-import PersonTableItem from 'src/components/PersonTableItem/logic';
+import PersonTableItem from 'Components/PersonTableItem/logic';
 
 function PersonTableRender(props) {
     return (
@@ -29,5 +30,10 @@ function PersonTableRender(props) {
         </table>
     )
 }
+
+PersonTableRender.propTypes = {
+    loading : propTypes.boolean,
+    persons : propTypes.object.isRequired,
+};
 
 export default PersonTableRender;

@@ -1,9 +1,10 @@
 import * as React from 'react';
+import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import PersonInputRender from './render';
 import { addPerson } from 'Actions/Person';
-import PersonModel from 'src/models/PersonModel';
+import PersonModel from 'Models/PersonModel';
 
 class PersonInput extends React.Component {
     constructor(props) {
@@ -53,5 +54,9 @@ class PersonInput extends React.Component {
         )
     }
 }
+
+PersonInput.propTypes = {
+    addPerson: propTypes.func.isRequired,
+};
 
 export default connect(null, { addPerson })(PersonInput);

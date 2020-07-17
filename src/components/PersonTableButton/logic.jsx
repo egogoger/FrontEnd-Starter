@@ -1,9 +1,10 @@
 import * as React from 'react';
+import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import PersonTableButton from './render';
 import { clearPersons } from 'Actions/Person';
-import PersonModel from 'src/models/PersonModel';
+import PersonModel from 'Models/PersonModel';
 
 class PersonTableItem extends React.Component {
     constructor(props) {
@@ -23,5 +24,9 @@ class PersonTableItem extends React.Component {
         );
     }
 }
+
+PersonTableItem.propTypes = {
+    clearPersons: propTypes.func.isRequired,
+};
 
 export default connect(null, { clearPersons })(PersonTableItem);

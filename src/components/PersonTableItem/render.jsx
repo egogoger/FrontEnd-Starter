@@ -1,4 +1,5 @@
 import * as React from 'react';
+import propTypes from 'prop-types';
 import './style.scss';
 
 function PersonTableItemRender(props) {
@@ -10,5 +11,11 @@ function PersonTableItemRender(props) {
         </tr>
     )
 }
+
+PersonTableItemRender.propTypes = {
+    onClick: propTypes.func.isRequired,
+    name: propTypes.string.isRequired,
+    surname: propTypes.string.isRequired,
+};
 
 export default PersonTableItemRender;

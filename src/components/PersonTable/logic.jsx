@@ -1,9 +1,10 @@
 import * as React from 'react';
+import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import PersonTableRender from './render';
 import { loadPersons } from 'Actions/Person';
-import PersonModel from 'src/models/PersonModel';
+import PersonModel from 'Models/PersonModel';
 
 class PersonTable extends React.Component {
     constructor(props) {
@@ -39,6 +40,11 @@ class PersonTable extends React.Component {
         )
     }
 }
+
+PersonTable.propTypes = {
+    persons: propTypes.array.isRequired,
+    loadPersons: propTypes.func.isRequired,
+};
 
 const mapStateToProps = state => ({
     persons: state.persons
