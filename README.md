@@ -8,6 +8,7 @@ Start your next web application with up-to-date development tools without a stru
 ## Setups
 List of supported setups:
 * React + Redux + Typescript ([branch](/../../tree/React-Redux-TS/))
+* React + Redux + Javascript ([branch](/../../tree/React-Redux-JS/))
 * Typescript ([branch](/../../tree/TS/))
 * Javascript ([branch](/../../tree/JS/))
 
