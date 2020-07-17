@@ -1,28 +1,24 @@
 import * as React from 'react';
+import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { Person } from 'Interfaces';
 import PersonTableItemRender from 'Components/PersonTableItem/render';
 import { removePerson } from 'Actions/Person';
 import PersonModel from 'Models/PersonModel';
 
-type IProps = Person & {
-    removePerson(person: Person): void,
-}
-
-class PersonTableItem extends React.Component<IProps> {
-    constructor(props:IProps) {
+class PersonTableItem extends React.Component {
+    constructor(props) {
         super(props);
 
         this.handleOnClick = this.handleOnClick.bind(this);
     }
 
-    private handleOnClick() {
+    handleOnClick() {
         this.props.removePerson({name: this.props.name, surname: this.props.surname});
         PersonModel.instance.savePersons();
     }
 
-    render():JSX.Element {
+    render() {
         return (
             <PersonTableItemRender
                 name={this.props.name}
@@ -31,5 +27,11 @@ class PersonTableItem extends React.Component<IProps> {
         );
     }
 }
+
+PersonTableItem.propTypes = {
+    removePerson    : propTypes.func.isRequired,
+    name            : propTypes.string.isRequired,
+    surname         : propTypes.string.isRequired,
+};
 
 export default connect(null, { removePerson })(PersonTableItem);

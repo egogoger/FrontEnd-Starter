@@ -1,14 +1,8 @@
 import * as React from 'react';
+import propTypes from 'prop-types';
 import './style.scss';
 
-import { Person } from 'Interfaces';
-
-type IProps = Person & {
-    onChange(event: React.ChangeEvent<HTMLInputElement>): void;
-    onSubmit(e: React.ChangeEvent<HTMLFormElement>): void;
-}
-
-function PersonInputRender(props: IProps):JSX.Element {
+function PersonInputRender(props) {
     return (
         <form className='person-input' onSubmit={props.onSubmit}>
             <input
@@ -28,5 +22,12 @@ function PersonInputRender(props: IProps):JSX.Element {
             <input type='submit' value='Add' />
         </form>)
 }
+
+PersonInputRender.propTypes = {
+    onSubmit: propTypes.func.isRequired,
+    name: propTypes.string.isRequired,
+    surname: propTypes.string.isRequired,
+    onChange: propTypes.func.isRequired,
+};
 
 export default PersonInputRender;

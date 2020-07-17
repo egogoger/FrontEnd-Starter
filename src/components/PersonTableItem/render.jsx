@@ -1,13 +1,8 @@
 import * as React from 'react';
+import propTypes from 'prop-types';
 import './style.scss';
 
-import { Person } from 'Interfaces';
-
-type IProps = Person & {
-    onClick(): void,
-}
-
-function PersonTableItemRender(props: IProps):JSX.Element {
+function PersonTableItemRender(props) {
     return (
         <tr className='person-table-item'>
             <td>{props.name}</td>
@@ -16,5 +11,11 @@ function PersonTableItemRender(props: IProps):JSX.Element {
         </tr>
     )
 }
+
+PersonTableItemRender.propTypes = {
+    onClick: propTypes.func.isRequired,
+    name: propTypes.string.isRequired,
+    surname: propTypes.string.isRequired,
+};
 
 export default PersonTableItemRender;

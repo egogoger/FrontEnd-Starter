@@ -4,7 +4,7 @@ import './style.scss';
 import Footer from 'Components/Footer/render';
 import Thanks from 'Components/Thanks/render';
 
-function HomePage():JSX.Element {
+function HomePage() {
     return (
         <div className='page'>
             <Thanks />

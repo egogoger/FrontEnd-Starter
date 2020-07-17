@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    entry: './src/main.tsx',
+    entry: './src/main.jsx',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
@@ -13,7 +13,7 @@ module.exports = {
     devtool: 'source-map',
 
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx'],
+        extensions: ['.js', '.jsx'],
         alias: {
             Components: path.resolve(__dirname, 'src/components/'),
             Pages: path.resolve(__dirname, 'src/pages/'),
@@ -22,8 +22,8 @@ module.exports = {
             Reducers: path.resolve(__dirname, 'src/store/reducers/'),
             Static: path.resolve(__dirname, 'static/'),
             Utils: path.resolve(__dirname, 'src/utils/'),
-            Constants$: path.resolve(__dirname, 'src/utils/constants.ts'),
-            Interfaces$: path.resolve(__dirname, 'src/utils/interfaces.ts')
+            Constants$: path.resolve(__dirname, 'src/utils/constants.js'),
+            Interfaces$: path.resolve(__dirname, 'src/utils/interfaces.js')
         }
     },
 
@@ -36,14 +36,6 @@ module.exports = {
                     'babel-loader',
                     'eslint-loader'
                 ],
-            },
-            {
-                test: /\.ts(x?)$/,
-                exclude: /node_modules/,
-                use: [
-                    'ts-loader',
-                    'eslint-loader'
-                ]
             },
             {
                 test: /\.s[ac]ss$/,

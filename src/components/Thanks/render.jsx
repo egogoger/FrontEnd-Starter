@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './style.scss';
 
-function Thanks():JSX.Element {
+function Thanks() {
     return (
         <div className='thanks'>
             <div className="thanks__message">

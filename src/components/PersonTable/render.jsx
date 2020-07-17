@@ -1,15 +1,10 @@
 import * as React from 'react';
+import propTypes from 'prop-types';
 import './style.scss';
 
 import PersonTableItem from 'Components/PersonTableItem/logic';
-import { Person } from 'Interfaces';
 
-type IProps = {
-    loading: boolean,
-    persons: Person[],
-}
-
-function PersonTableRender(props: IProps):JSX.Element {
+function PersonTableRender(props) {
     return (
         <table className='person-table'>
             <thead>
@@ -35,5 +30,10 @@ function PersonTableRender(props: IProps):JSX.Element {
         </table>
     )
 }
+
+PersonTableRender.propTypes = {
+    loading : propTypes.boolean,
+    persons : propTypes.object.isRequired,
+};
 
 export default PersonTableRender;
