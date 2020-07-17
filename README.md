@@ -4,11 +4,15 @@ Start your next web application with up-to-date development tools without a stru
 ## Setups
 List of supported setups:
 * React + Redux + Typescript ([branch](/../../tree/React-Redux-TS/))
+* React + Redux + Javascript ([branch](/../../tree/React-Redux-JS/))
+* Typescript ([branch](/../../tree/TS/))
+* Javascript ([branch](/../../tree/JS/))
 
 Default technological stack:
 * Webpack module bundler
 * ESLint linter
 * Babel transpiler
+* Sass CSS preprocessor
 
 ## Usage
 #### Manage repo
@@ -44,7 +48,6 @@ Run this script to remove default pages, components, models, actions and reducer
 clean.sh [-ah]
 ```
 > Use -a option to completely delete components, pages, models and static folders
-
 
 ## License
 [MIT](LICENSE)
