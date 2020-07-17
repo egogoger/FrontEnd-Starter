@@ -1,5 +1,5 @@
 # FrontEnd Starter 2020 (React + Redux + Typescript)
-![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/react?logo=react) ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/redux?logo=redux) ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/dev/typescript?logo=typescript)
+![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/react?logo=react) ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/redux?logo=redux)
 
 ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/dev/webpack?logo=webpack) ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/dev/eslint?logo=eslint) ![](https://img.shields.io/github/package-json/dependency-version/EgorBedov/FrontEnd-Starter/dev/sass?logo=sass)
 
@@ -8,6 +8,7 @@ Start your next web application with up-to-date development tools without a stru
 ## Setups
 List of supported setups:
 * React + Redux + Typescript ([branch](/../../tree/React-Redux-TS/))
+* React + Redux + Javascript ([branch](/../../tree/React-Redux-JS/))
 * Typescript ([branch](/../../tree/TS/))
 * Javascript ([branch](/../../tree/JS/))
 
@@ -53,7 +54,7 @@ clean.sh [-ah]
 > Use -a option to completely delete components, pages, models and static folders
 
 ## File structure
-You can change the file structure whichever way you want and if you do so, don't forget to change aliases paths in both [Typescript config](../blob/React-Redux-TS/tsconfig.json) and [Webpack config](../blob/React-Redux-TS/webpack.config.json).
+You can change the file structure whichever way you want and if you do so, don't forget to change aliases paths in both [Typescript config](../blob/React-Redux-JS/tsconfig.json) and [Webpack config](../blob/React-Redux-JS/webpack.config.json).
 ```bash
 ├── dist/               // Auto generated output files
 ├── node_modules/
@@ -64,16 +65,14 @@ You can change the file structure whichever way you want and if you do so, don't
 │   ├── store
 │   │   ├── actions/    // Redux's actions and action creators
 │   │   ├── reducers/   // Redux's reducers
-│   │   └── store.ts    // Redux's store
+│   │   └── store.js    // Redux's store
 │   ├── utils
-│   │   ├── assets.d.ts     // Assets declarations (TS)
-│   │   ├── constants.ts    // Global constants
-│   │   ├── interfaces.ts   // Global interfaces
+│   │   ├── constants.js    // Global constants
 │   │   └── variables.scss  // Global CSS variables
 │   ├── index.html
+│   ├── main.jsx
 │   ├── main.scss
-│   ├── main.tsx
-│   └── server.ts
+│   └── server.js
 ├── static/             // Static files
 ├── .babelrc            // Babel config
 ├── .eslintignore
@@ -81,7 +80,6 @@ You can change the file structure whichever way you want and if you do so, don't
 ├── .gitignore
 ├── clean.sh            // Script to delete old files
 ├── package.json
-├── tsconfig.json       // Typescript config
 └── webpack.config.js   // Webpack config
 ```
 
