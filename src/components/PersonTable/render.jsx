@@ -32,8 +32,8 @@ function PersonTableRender(props) {
 }
 
 PersonTableRender.propTypes = {
-    loading : propTypes.boolean,
-    persons : propTypes.object.isRequired,
+    loading : propTypes.bool,
+    persons : propTypes.array.isRequired,
 };
 
 export default PersonTableRender;
