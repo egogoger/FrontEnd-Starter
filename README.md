@@ -16,16 +16,19 @@ Default technological stack:
 
 ## Usage
 #### Manage repo
-1) Mirror repository - [Github tutorial](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository)
+1) Fork repository 
+    > Also you can mirror it via [fork.sh script](fork.sh) or [mirror tutorial](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository)
 2) Choose branch and delete all others 
 
-Manually:
+a) Using the [fork.sh script](fork.sh)
+
+b) Manually:
 ```bash
 git branch -d branch_name
 git push origin --delete <branch_name>
 git push origin :<branch_name>
 ```
-Or delete it on GitHub then do `git fetch --all`
+c) Or delete it on GitHub then do `git fetch --all`
 #### Install the setup
 ```bash
 npm install
