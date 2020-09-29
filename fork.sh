@@ -50,7 +50,7 @@ echo " --- Specified branch exists"
 
 # Delete branches (we should not delete master branch)
 for branch in "${branches[@]}"; do
-  [[ "$branch" != "master" ]] && [[ "$2" != "$branch" ]] && git branch -d $branch
+  [[ "$branch" != "master" ]] && [[ "$2" != "$branch" ]] && git branch -D $branch
 done
 echo " --- Unnecessary branches deleted"
 
